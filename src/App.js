@@ -1,11 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import Header from "./components/Header";
+// import Home from "./components/Home";
+import Spread from "./components/Spread";
+
 const App = () => {
   return (
     <div>
-      <p>Dang</p>
+      <Header />
+      <Spread />
     </div>
   );
 };
 export default App;
-ReactDOM.render(<App />, document.getElementById("app"));
