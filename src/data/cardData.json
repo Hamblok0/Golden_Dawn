@@ -131,7 +131,7 @@
     "shortDescription": "Synthesis, the end of the matter, patience, perserverance, crystallization. Obstinancy, opposition, delay, false visions.",
     "longDescription": "The Universe as the end and completion of the Major Arcana is the symbol for the zenith of development, the achieved goal. The work is done or will soon be and we have found our place in life or will soon do so. Seeing the second decade of the Major Arcana as a way of self-realization, the Universe becomes the crown and the end. The Death was the rebirth, the Art the beginning of the alchemic work, the Devil the overcoming of restrictions, the Tower the breakdown of the jail. We followed the Star, explored the Moon, found the Sun and watched the Phoenix rise from the ashes. Finally, we touched the Universe. On a more practical level the Universe implies the good news that a goal has been achieved, or a success sure to come, and that a venture will flourish. In its negative aspect the trump can tell us that we are running after false ideas, that our way leads nowhere, that it is far too early to reach out for the Universe for there's substantial work that has yet to be done."
   },
-  "w-a": {
+  "w-1": {
     "name": "Ace of Wands",
     "element": "Fire",
     "shortDescription": "Natural force (as opposed to invoked), energy, vigour, rush.",
@@ -214,5 +214,257 @@
     "element": "Fire",
     "shortDescription": "Brilliance, beauty, courage, force. Superficial, threatrical, unstable, domineering.",
     "longDescription": "The Princess of Wands represents the Earth in the element of Fire, far from the Queen's depth and the Prince's Air. She's the Fire's daughter, with all the flaming energy of the Knight, unaffected from deeper emotions. The only heritage from her mother is the good memory for insultings and the thirst for revenge. Though, while dancing in the flames, the Princess of Wands has her own beauty with her unsatiable hunger for life and her endless, powerful energies. Her passion is hot, explosive and fast, burning down the object of desire and forgetting about it as soon as a new one comes in sight. Almost like Bizet's Carmen, she's irresistable in her seductive carelessness, in all her lust and anima. At the shadow side, the Princess of Wands can lack all true warmth of the heart, faithless and self-indulgent, theatralic and unable to feel real compassion and understanding. At the worst, she can sink down in pure greed and cruelty, too cold and numbed to recognize the own emotional poverty and emptiness."
+  },
+  "s-1": {
+    "name": "Ace of Swords",
+    "element": "Air",
+    "shortDescription": "Realization, clearness, objectivity, logic. intellectual struggle, intellectual coldness.",
+    "longDescription": "The Ace of Swords is the seed of the intellectual power, the origin and beginning of the airy world of Yetzirah, which implies thinking, analysing, realizing through logic and mind. Like every Ace, it represents the unstructured primary matter of its suit, the undifferentiated unity, therefore the Ace of Swords is the beginning of thinking, a first idea, a first thought or impulse from the mind and the essence of the element of Air. So the card can stand for a first idea or realization, a new view of things, or simply tell us that we should let our mind work rather than following our emotions only. It also reminds as that the Ace is only the seed, that it needs growing and experience to proceed."
+  },
+  "s-2": {
+    "name": "Two of Swords - Peace",
+    "element": "Air",
+    "shortDescription": "Compromise between soul and mind, beginning of analysis, balanced force. Disagreement, unsolved tension, difference.",
+    "longDescription": "Chokmah is creation and manifestation, showing the element in its best light, and so the mind gets its best chance to indicate its powers without showing its shadows. For the Swords, this means peace, since the mind is on its finest level when just administering its potentials."
+  },
+  "s-3": {
+    "name": "Three of Swords - Sorrow",
+    "element": "Air",
+    "shortDescription": "Understanding, sobering, losing false illusions. Disappointment, pain, separation.",
+    "longDescription": "With the Three, the Swords are entering Binah, the fields of understanding, of perception and realization, and they reveal the dark side of understanding - or the truth behind the common saying that idiots are the happier people. It is the curse of the Swords to be so clear and honest, to analyze what others prefer to ignore, to put in plain light what others hide in the dark. They are not like the Cups who are lucky when they understand themselfes, the Swords are the Mind and when understanding what they see, they dive into melancholy. So the Three of Swords can talk of a painful realization, a hard decision that has to be made, the melancholy of Saturn when recognizing the unveiled truth. They also can stand for a disappointment, the loss of an illusion, or the detection of a treachery, a lie, a deceit."
+  },
+  "s-4": {
+    "name": "Four of Swords - Truce",
+    "element": "Air",
+    "shortDescription": "A chance to reflect, rest from conflict, tolerance. False truce, isolation, forced restriction",
+    "longDescription": "The Four of Swords has reached the fields of Chesed, manifestation and condensation, the winds of mind have settled and the powers of the element are well-balanced in themself. The mind has solved a problem, found a solution, completed a process, or has come to a good, satisfying compromise. Jupiter keeps the scales of the libra in harmonious balance, and the truce can be enjoyed full-hearted. Though, for the Air stability means stagnity, therefore the restful truce should be used for reflection and reconsideration, the idea that has become full circle in the calm realms of Chesed needs to proceed to further levels."
+  },
+  "s-5": {
+    "name": "Five of Swords - Defeat",
+    "element": "Air",
+    "shortDescription": "Realisation of limitations, philosophy as consequence of pain. Loss, defeat, failure, poverty.",
+    "longDescription": "The Five of Swords have reached Geburah, the realm of motion and changing, of destruction and disintegration. The truce of the Four couldn't last, the airy Swords had to recognize that they never were meant for structure and stabilization, that they needed to stick to their unsteady nature, no matter how high the price might be. The deep crisis the Swords are going through in here also result in the influence of Venus, the planet of emotion, harmony and sensitivity. For the logical Swords who are forced to see everything absolutely clear and unveiled, too much sensitivity can mean a sharp pain that no reasonable argument might soften. Intelligent as they are, they clearly analyse the trap they're in and start struggling against fate, thus recognizing that they cannot win."
+  },  
+  "s-6": {
+    "name": "Six of Swords - Science",
+    "element": "Air",
+    "shortDescription": "Searching for truth, success after trouble, research. Excess of rationalism, circular and pointless thinking, misanthropism.",
+    "longDescription": "In the beautiful harmony of Tiphareth, the Six of Swords have overcome the crisis of the Five, the emotional wounds are healed and the element concentrates on its origin potentials, its very own powers and qualities. In science i.e. any fields of deeper thinking, the mind can unfold all its energies, and the restless Swords have the chance to combine the mind with the mental spirit from which it was born, to achieve a perfect harmony of it all."
+  },
+  "s-7": {
+    "name": "Seven of Swords - Futility",
+    "element": "Air",
+    "shortDescription": "Unmasking of illusions, cleverness. Trickery, treachery, deceit, amorality.",
+    "longDescription": "The Seven of Swords show the element with its reigns lose, storming into the realms of anarchy and destiny, fighting against 'nobody knows what', getting entangled in many conflicting tendencies. Now none of the Suits is lucky within the Seven - the Wands burn down, the Cups nearly drown and the Disks are out cold - yet the Swords are least willing to accept their fate and activate every trick and list they can figure to get along. And considering that the Swords are pure intellect, they are embarrassingly good in figuring out tricks. Therefore, the Seven of Swords can talk of trickery, cheating, sudden affronts, juggling and intentional confusing with unrestrained Mercurian amorality. Though, all the lists are bound to fail, even the clever Swords cannot escape the hand of fate."
+  },
+  "s-8": {
+    "name": "Eight of Swords - Interference",
+    "element": "Air",
+    "shortDescription": "Realization of causality, accepting of limitations and relativity. Confusion, compulsive brooding, endless analyzation.",
+    "longDescription": "With the Eight of Swords, the suit enters Hod, the realm of intellect and logic, and one should think how happy the Swords must be now that they are 'amongst fellows'. But Hod is more the structure of mind, while the Swords are the freedom of mind - conflicts are pre-programmed. Further, the Eight of Swords reveal the nature of the suit regarding its tendency of analysing and considering everything, digging out a counter-argument for any argument there is, quickly recognizing any limitation and conclusion that in the end means the interference in the own reasoning. Only blessing stupidity can be selfsecure enough to believe that the own thought is the only truth - the Swords cannot. In another aspect, the Eight of Swords can talk of the restlessness of mind, of thoughts bursting out uncontrolled and unproductive, of nervous brooding and confused rumination."
+  },
+  "s-9": {
+    "name": "Nine of Swords - Cruelty",
+    "element": "Air",
+    "shortDescription": "Painful observation of facts, diving into the depths regardless of consequence. Despair, lack of pity, contrived ignorance.",
+    "longDescription": "The Nine of Swords are entering Yesod, the fields of reflection and imagination, and while all other Suits made themself comfortable in blessing happiness, the Swords seem to be the outcast, called 'Cruelty'. With the airy nature of the mind, the Swords cannot rest, they cannot stop thinking and analyzing - and in the end, cannot ignore the fact that nothing really leads anywhere, that in the end there is nothing. (Take the technology of our century as one little example: the Wands praise the spirit of mankind, the Cups dream of all the goods that could be done, the Disks enjoy the riches it produces - the Swords analyse the effects and come to the conclusion that our planet gets destroyed.) Therefore, it is a bit unfair to call the Nine of Swords a bad card, or criticise it for cruelty or 'over-analysing'. After all, we cannot expect the suit of the mind to tell us that we're better off with our heads in the sand, just to not see the cruel truth that is out there."
+  },
+  "s-10": {
+    "name": "Ten of Swords - Ruin",
+    "element": "Air",
+    "shortDescription": "Rebirth, end of a cycle. Catastrophe, propagation of destruction, total loss.",
+    "longDescription": "With the Ten of Swords, the development of human intellect has consequently reached its last step - from the birth of intellect within the Ace to complete ruin within the grounds of the Ten. The card teaches the lesson that endless fighting ends with destruction, endless analysis with the copmplete loss of hope and belief. It forces the lesson of the Nine of Swords to its inevitable conclusion. But with the Sun above it, it does not lack every hope. It will silently return to its origin again, to the first spark of mind in the Ace, to start all over again. The big hope in here is that the lessons from the journey absolved won't get forgotten. By the way, every Ten in the Minor Arcana stands for the end of a process, for the need to restart or at least variate, only the Ten of Swords have an amazingly crude way to put it into words - that's just the way they are."
+  },
+  "s-k": {
+    "name": "Knight of Swords",
+    "element": "Air",
+    "shortDescription": "Sharpness of mind, intellect, cognition. Intellectual rigidity, deceitful ambiguity.",
+    "longDescription": "The Knight of Swords represents the Fire in the Air, he is the storm of the mind flaming up high. He is sharp-minded, analytical, clever, dexterous and courageous, always ready for and fond of argumentations and verbal wars. His passion for intellectual mindgames can make him an excellent warrior in logical excursions, enjoying both picky subtleties and bizarre contradictions. At his best, the Knight of Swords stands for intelligent judgement and mental realizations, he is a skilful trickster and a keen observer. Though, lacking the depths of the water and the stability of earth, his mindgames could turn into cloud-cuckoo-lands without inner reflections, he gets unable to decide simply for getting lost in too many theoretical variations. At the worst, the Knight of Swords tends to put logic and mind ahead of all other values, turning into an cold analytic judging and rating by logic only, without warmth or humanity; or even degenerates to a deceitful, sardonic tyrant of the mind."
+  },
+  "s-q": {
+    "name": "Queen of Swords",
+    "element": "Air",
+    "shortDescription": "Wisdom, self confidence, gracefulness, perceptive. Narrow minded, deceitful, inaccessible.",
+    "longDescription": "The Queen of Swords represents the Water in the Air, thus supplying the qualities of emotion and sensitivity to the airy element, the abilty to transfer and reflect, to form and create. As the mother of the Air, she will have a strong dominance of intellect. The Queen of Swords can be very sensitive, perceptive, sharp-witted and intelligent. On the dark side, she can turn cruel, malicious, narrow-minded, bigoted or even deceitful, dangerous, too, because of her charme and beauty. Being water in air, the Queen of Swords lacks the stability of the Earth as well as the will of Fire. So she can lack practicality, steadyness, running the risk to live in an idealistic land of her own outside of reality. Further, she is sensible to interferences and disturbance from the outside, unable to protect herself against it."
+  },
+  "s-p1": {
+    "name": "Prince of Swords",
+    "element": "Air",
+    "shortDescription": "Creativity, mastery of words, many ideas. Unstable, moody, cheating, disguise.",
+    "longDescription": "Being Air in Air, the Prince of Swords is the pure manifestation of mind and intellect, full of plans and ideas which on the worst side may disturb and confuse each other, on the best create an inexhaustibale spring of creative thoughts. The Prince of Swords is intelligent, idealistic, full of creativity and fluidity, a real Mercurian spirit who often will argue just for the fondness of arguing - and not so much for the arguments themselfes. The Prince of Swords can throw himself head over heels into a scientific research, reaching highest levels within a short time and then throw everything away without further notice because something else appears more interesting at the moment. On the dark side, the Prince of Swords lacks both the qualities of Water and Earth, he can easily become unstable, unreliable and extremely moody, using his amount of intelligence to trick himself through life, becoming a master of disguise and cheat."
+  },
+  "s-p2": {
+    "name": "Princess of Swords",
+    "element": "Air",
+    "shortDescription": "Careful, courageous, serious, rigorous. Impulsiveness, wasteful, naivety, spiteful, malicious.",
+    "longDescription": "The Princess of Swords is the earthy child of her element, the wind over the grounds of Assiah. Her logic can be destructive, she is perceptive, serious and rigorous, yet she can show the characteristica of a child that lacks morality and nobility. Therefore, the Princess of Swords can get stubborn and cruel, and while beginning to think indepedently about something, she can turn very discriminating and egoistic, showing aggressivity whenever the result is not to her delight. In the Earth, all the free qualities of Air get surpressed and restricted. At her best, the Princess of Swords can be very practicle and clever, showing fine skills when dealing with material matters or conflicting opinions, she can be generous and kind once she lost the inner fear and insecurity that results from the natural incompability between Earth and Air."
+  },
+  "c-1": {
+    "name": "Ace of Cups",
+    "element": "Water",
+    "shortDescription": "Desire for human connection, fertility, sympathy, empathy. Loneliness, hysteria, irrational thinking.",
+    "longDescription": "The Ace of Cups shows the way deep into our soul, to detect beauty and trust. It stands for the sources of love, for growing feelings, the desire for a relationship or the readiness to have a friend. Referring to the Kaballah, the Ace of Cups is attached to Briah - the world of pure feeling and sensitive intention.It is the female counterpart of the Ace of Wands, representing the female element water as a sign for devotion and care. The card also tells that the beauty and the ugly are two poles belonging together. Without shadow, there's no light - and mud is needed to make liliths blossom."
+  },
+  "c-2": {
+    "name": "Two of Cups - Love",
+    "element": "Water",
+    "shortDescription": "Passion, harmony, pleasure, love. Dissipation, waste, indifference.",
+    "longDescription": "The Two of Cups is the polarisation of the freely floating streams of the Ace of Cups. Where the Ace was all-embracing in its feelings, the Two of Cups has a particular focus. The Ace was unity, the Two of Cups is differentiation, feelings are fucussed on a specific object. Remembering that 2 as a number is the symbol of duality, it implies the Two of Cups needs a counterpart, a source or a goal outside itself."
+  },
+  "c-3": {
+    "name": "Three of Cups - Abundance",
+    "element": "Water",
+    "shortDescription": "Passive success, satisfaction, joy, luck. Excessive pleasure, greed, raw lust.",
+    "longDescription": "The Three of Cups will combine the qualities of both the Ace and the Two of Cups. The undirected love has found its goal, it will grow and blossom. The 3 (triad) as the number of synthesis and harmony will pour its riches into the seas of Binah, the understanding and realization. Therefore, the Three of Cups shows that we have found joy and fulfillment in love and devotion, we are aware of the worth and understand its meaning."
+  },
+  "c-4": {
+    "name": "Four of Cups - Luxury",
+    "element": "Water",
+    "shortDescription": "Stability, maternity, protection, comfort. Possessive love, selfishly imposed restriction, lack of freedom.",
+    "longDescription": "The Three of Cups will combine the qualities of both the Ace and the Two of Cups. The undirected love has found its goal, it will grow and blossom. The 3 (triad) as the number of synthesis and harmony will pour its riches into the seas of Binah, the understanding and realization. Therefore, the Three of Cups shows that we have found joy and fulfillment in love and devotion, we are aware of the worth and understand its meaning."
+  },
+  "c-5": {
+    "name": "Five of Cups - Disappointment",
+    "element": "Water",
+    "shortDescription": "Sobering, separation as consequence, emotional crisis. Bitterness, emptiness, treachery.",
+    "longDescription": "The Five of Cups stands for an emotional crisis. It might be that unconscious fears come true, it could tell that feelings are disrupted or wasting away, the soul is empty and unfulfilled. In the sequence of the cups, the Five is the logical consequence of the Four. The grey tristesse that was lurking behind the luxury's glamour is now exposed, the 'truth is out'. The Five of Cups implies the loss of illusion, the realization of a deception. It hurts, but is necessary when we don't want to spend the rest of our lifes with our heads in the sand. The 5 is the quintessence, the power that exceeds the 4 - Geburah is motion and changing, the power of destruction. To put it plain: we have to learn how to crawl before we can learn to walk."
+  },
+  "c-6": {
+    "name": "Six of Cups - Pleasure",
+    "element": "Water",
+    "shortDescription": "Deep emotions, returning to inner self, inner balance. Afraid to make a move, mental standstill.",
+    "longDescription": "The Six of Cups has overcome the crisis of the Five, it has learned and accepted its lesson. Tiphareth is the center, standing for beauty and harmony, the realization of consciousness. The 6 as the number of completion solves the imbalance of the 5, it combines the contrasts and reconciles the opposites. The 6 is open to all directions. So the Six of Cups will tell of deep emotions, that have passed the depths of pain and fear and therefore will enjoy the pleasures of harmony and devotion more than ever before."
+  },
+  "c-7": {
+    "name": "Seven of Cups - Debauch",
+    "element": "Water",
+    "shortDescription": "Recognition of intoxicating delusion and false promises. Losing self in illusion, vanity, intoxication.",
+    "longDescription": "The Seven of Cups are standing for the waters of delusion, the clouds of intoxication, the emotional waters are rotting in the depths of destiny, they have fallen from the grace of Tiphareth. The Seven of Cups also talks of the human desire to experience the unknown, the subconscious, the wish to escape the plain old reality and find a better world somewhere in fantasy. But it shows clearly the dangers of such mindgames, when the dreaming turns into a hapless runaway from life. The success is illusionary, just a deception or wishful thinking. In its best aspects, the Seven of cups is a warning to recognize the delusion, the disguises, to get rid of the intoxicating feelings and face up the facts. Netzach is not only anarchy, but creativity - so the realization of the bad can lead to something good when used with care."
+  },
+  "c-8": {
+    "name": "Eight of Cups - Indolence",
+    "element": "Water",
+    "shortDescription": "Transformation after excess. Depression, instability, frustration.",
+    "longDescription": "The Eight of Cups has driven the debauch of the Seven to absolute excess, the delusions have lost all attraction and all that's left is frustration. The sequence of the numbers has reached Hod, calling for structure and logic, but the emotional waters of Briah cannot be happy with this call and remain in dumb resignation. Nevertheless, happy or not, the call must be heard to leave the bogs of numbness, and the Eight of Cups tells us to abandon the past, leave the current situation, make up our minds most honestly and open our eyes to upcoming changes."
+  },
+  "c-9": {
+    "name": "Nine of Cups - Happiness",
+    "element": "Water",
+    "shortDescription": "Optimism, trust, compassion, fulfillment. Complacency, indulgence, vanity.",
+    "longDescription": "With Yesod - reflection and imagination - inside of the perfect harmony of the Nine, the Nine of Cups has returned to the middle column of the Tree of Life, enlightened by the beauty of Tiphareth that resides above and just one step from Malkuth as its root and origin, the completition of the journey. Nothing serves the waters of Briah better than the seas of Yesod, so the card shows perfect harmony and fulfilment in any emotional matter. On its shadow site, the card shows the risk of selfindulgence and complainsance, the temptation to just enjoy the happiness but forget the reflection that keeps the light upon the waters alive."
+  },
+  "c-10": {
+    "name": "Ten of Cups - Satiety",
+    "element": "Water",
+    "shortDescription": "Inner completion and fulfillment. Excessive sentiment, nostalgia, debauchery, emptiness.",
+    "longDescription": "With the Ten of Cups, the suit has completed the journey from the seeds of the Ace to the final goal of Malkuth, root and origin of the element. All enegergies are ending, the have found their fixed forms. The waters are resting now in their final grounds. Yet the Ten is not the end of a line, but the end of a circle - the cross sum of 10 is 1 and there we are at the Ace again. After all the ups and downs of the journey, we find ourself at its beginning, and it is up to us wether we use our experiences or not."
+  },
+  "c-k": {
+    "name": "Knight of Cups",
+    "element": "Water",
+    "shortDescription": "Self sacrifice, compassion, sensibility. Vanity, artificial, unsteady.",
+    "longDescription": "The Knight of Cups represents the Fire in the element of water, trying to bring the contrasts in balance, using the flaming fires to advocate the passive waters. Therefore, there is a certain unstability within this Knights' character, that can shift from one side to the other. Briah is the world of emotions and sensitivity, and the Knight of Cups might have good senses for art, poetry and lyric, his compassion can make him a good healer. If he manages to reach real depth and inner conviction, he will be able to provide rich tenderness and emotional warmth. On the shadow side, his quickly rising emotions could be overwhelming, but without depth and reliability, when the fires of spontanity won't be able to harmonize with the depth of the waters. He is friendly but passive, easy to enflame but his interest can fade as quick as it flamed up, at its worst even appear as fakery and falsiness. So the Knight of Cups may also appear as an unsteady character, full of unripe ideas and failed attempts."
+  },
+  "c-q": {
+    "name": "Queen of Cups",
+    "element": "Water",
+    "shortDescription": "Emotional depth, kindness, sensitivity, imagination. Senseless irrationality, excessive fantasy.",
+    "longDescription": "The Queen of Cups represents water in water, she is the purest manifestation of the soul of the waters. Thus she represents pure emotion, passion, feeling, never influenced by judgement or purpose. She is loving and affectionated, a warm-hearted mother and a tender friend, looking into the depths of the heart. On the darker side, the Queen of Cups lacks the stability of the Earth, the will of Air and Fire. Water in water is all passivity and has no powers of its own, but makes a perfect transformer of any other power coming along. So she is susceptible to all kinds of influences, her unstability might let her appear unreliable and inconstant. At its worst, the precious qualities of imagination and flowing fantasy might turn out to weakness and thoughtlessness, turning in any direction that any wind may blow, getting lost in a dreamworld of irreal fantasies."
+  },
+  "c-p1": {
+    "name": "Prince of Cups",
+    "element": "Water",
+    "shortDescription": "Warmth, artistic intent, compassion, intellect. Cruelty, recklessness, careless sacrifice, selfishness.",
+    "longDescription": "The Prince of Cups represents the Air above the waters, as the son of the Knight and the Queen - Fire and Water - he combines both the fiery flames and the watery depths of his parents, bringing them up in the heights of the Air, storming towards Yetzirah. So the Prince of Cups has all the emotional depths of the water, but also the intellectual values of the Air. He is clever and open minded, and his emotional soul can make him a sensitive artist or philosoph. Due to the heritage of Briah, he appears introverted and reversed, and indeed he tends to keep his secrets to himself. Like both his parents, he seems to be easy susceptible, but the sharpminded air makes him choose fairly what to accept in the end. On the shadowy side, the Prince of Cups can be reckless and selfish, always striving to improve his own goals and studies, carelessly sacrificing relations in order to perfectionate his art or passion, and he can be quite shifty in dealings."
+  },
+  "c-p2": {
+    "name": "Princess of Cups",
+    "element": "Water",
+    "shortDescription": "Intuition, dreamy imagination, fantasy. Abuse of feelings, flatterer, seductive, fake.",
+    "longDescription": "The Princess of Cups represents the earth in the waters of Briah, an island floating in the groundless seas. She is far from her father's flames and her mother's depth, and she lacks the researching spirit of her brother. She is of endless tenderness, kindness and lovingness, living on her isle of romance and joy. Therefore, an uneffected spectator might take her as childish or selfish, but the island of the princess can be so fertile and rich. Artistically inclined talents can be detected and supported, medial abilities can rise and deeper insights can be gained. On the dark side, the island can turn out to be a castle made of sand, sinking in the seas of irrationality and daydreaming. The Princess of Cups, unwilling to leave her realm outside the 'common' world, may sink with it and at its worst might seduce others to follow her."
+  },
+  "d-1": {
+    "name": "Ace of Disks",
+    "element": "Earth",
+    "shortDescription": "New beginnings, a chance, beginning of creation. Avarice, born but stunted growth.",
+    "longDescription": "The Ace of Disks represents the entity of the element Earth, the beginning of Assiah, the material world of making. It stands for the pureness of the element, and also for its seed, the first little sprout that later becomes a tree. So the Ace of Disks can stand for the beginning of a material subject, this can be a physical project or a material value, which could mean the urge to material creation or the chance for material gain. But, the Disks not only represent plain materials, but the entire world of Assiah, the actual, physical earth of daily life, and the actual, physical body of the human being. This implies home and profession, daily works, familiar bondings, health and well-being in common. And in this context, the Ace of Disks tells us that something will be created, something will begin."
+  },
+  "d-2": {
+    "name": "Two of Disks - Change",
+    "element": "Earth",
+    "shortDescription": "Flexibility, enthusiasm for something proceeding. Inability to accept change, clinging to the old.",
+    "longDescription": "The Two of Disks represents the Earth in Chokmah, the realm of creation and energy, directing the pure material resources of the Ace towards a specific goal, in order to change from the raw material to the actual creation process. Further, the card is called Harmonious Change, it stands for the alternation and natural balance of gain and loss, weakness and strength, growing and fading, ever varying occupation and wandering. In nature, everything is in constant change, well balanced with and in each other, building the principle of natural growing and proceeding. The Two of Disks reminds us that we are still part of that nature, that we have to accept the natural flow of changes and handle it with care and consideration."
+  },
+  "d-3": {
+    "name": "Three of Disks - Works",
+    "element": "Earth",
+    "shortDescription": "Progress, crystallization, manifestation, understanding. Neglect, sloppiness, stopping too early.",
+    "longDescription": "The Three of Disks enters Binah, the fields of understanding and perception, initiatiing the process where the project that began in the Two of Disks is viewed and understood against its surrounding i.e. in its completion. The card also talks of the alchemical wedding, in which the alchemical mercury combines sulphur with salt, thus building the living gold (the philosopher's stone). It implies the basic idea of Earth, the cristallisation of its powers and qualities, the commencement of matter to be established. The name of the card is Works, saying that work was done to get that far, thus it implies a first taste of victory, an admission that a progress was made, a big step forward on the way. Though, further work will be needed to keep the achieved status and to proceed in it."
+  },
+  "d-4": {
+    "name": "Four of Disks - Power",
+    "element": "Earth",
+    "shortDescription": "Assured material gain, rank, wealth, productivity. Greed, over-estimation of wealth, fear of loss",
+    "longDescription": "The Four of Disks has reached the realm of Chesed, the fields of condensation, growth and stability, standing in the structural discipline of the Four. The work of the Three has paid off, the fruits are rich and manifold. Therefore, the Four of Disks represent success, establishment, proficiency, comfort and security not only in material values, but in familiar relations and profession either. Thus, the power it supplies is grown from peace and security, the welldeserved reward for good work and concentrated effort. It has nothing to do with any ruling force, and it won't ask for it. One the dark side, the four of Disks admonishs that any overrated attachment to comfort or possession results in fear of loss and failure, avarice, greed, hoarding, the comfortable power of peace turns into an ugly force that is directed against oneself."
+  },
+  "d-5": {
+    "name": "Five of Disks - Worry",
+    "element": "Earth",
+    "shortDescription": "Reconsideration of values, managing in hard times. Unpredictable changes, circumstances getting worse.",
+    "longDescription": "The Five of Disks finds itself in the changing movements of Geburah, but this is not the wellbalanced change of the Two of Disks, but an imbalanced, disruptive change, the effect of the 5 breaking up the stability of the 4, destroying its structure and balance. So the Five of Disks represents a material crisis, which can also be a crisis in home and profession, an illness or injury, anything that disturbs or destroys the material, peaceful security of the Four. There is not much to find when looking for the bright sight of the card, nevertheless it is a fact that every burning of a forest results in many little sprouts that appear afterwards, having the most fertile ground in the ashes. But of course, the old forest doesn't need to burn down completely - the card can also talk of the worry that it might do so just because it burns somewhere in the near."
+  },
+  "d-6": {
+    "name": "Six of Disks - Success",
+    "element": "Earth",
+    "shortDescription": "Wealth, nobility, overcoming crisis. False pride, prodigal, taking things for granted.",
+    "longDescription": "With the Six of Disks the Suit enters the harmonious realm of Tiphareth, back to the well-balanced middle of the Tree, leaving behind the crisis of the Five, regaining success and wealth. Having experienced both the bad and good sides, gain and loss, the Six of Disks has achieved a wiser attitude towards material concerns. Nothing is taken for granted so easily anymore, and losses won't be taken for the end of the world. The material wealth is viewed in its actual value, not higher than it is, and not lower when we actually had expected more."
+  },
+  "d-7": {
+    "name": "Seven of Disks - Failure",
+    "element": "Earth",
+    "shortDescription": "Waiting for the right opportunity, patience, reflection. Unwise investments, hasty actions, expedience.",
+    "longDescription": "The Seven of Disks are falling into Netzach, the fields of anarchy and destiny, and losing the harmonious peace of Tiphareth, this is a radical fall from paradise into the abysses of fate. Failure is the name of the card and program for its downfall, and so the Seven of Disks talk of hopes deceived and crushed, of unfilled promises, loss of fortune, dealings that first sounded good but later revealed as short-living or cheating, false successes with no lasting benefit, that in the end had cost much more than they had gained. The hope within the card is the hand of Saturn, the father of time, who reminds us to wait for a chance instead of quickly jumping after any vague promise, to silently watch and reflect and get deeper insights into the coherences, until the time will come when a real chance shows up."
+  },
+  "d-8": {
+    "name": "Eight of Disks - Prudence",
+    "element": "Earth",
+    "shortDescription": "Approaching with care, consideration of facts, patience. Overly careful, over anxious, indecisive.",
+    "longDescription": "For the Eight of Disks, the entering of Hod means a new beginning. The Disks have learned the lesson that Saturn has teached in the desastrous Seven, that everything needs time and consideration. Now here within Hod, the area of logic, the Eight of Disks develop prudence and patience. So the Eight of Disks have learned to be careful, take their time to overthink their steps, considerate all facts and patiently wait for their chances. They absolve an apprenticeship in their own field, trying to do it better and avoid the mistakes from ealier stages. On the dark side, the Eight of Disks can be over-careful, or careful just in small things while foolish in the big, over-anxious in front of risks, unable to come to any conclusion or decision, considerating with no end but finally doing nothing."
+  },
+  "d-9": {
+    "name": "Nine of Disks - Gain",
+    "element": "Earth",
+    "shortDescription": "Material well being, riches. Greed, overly materialistic thinking, abuse, exploitation.",
+    "longDescription": "The Nine of Disks have reached Yesod, the fields of imagination and reflection, but also of foundation, and in the latter the Disks meet their happiest realms. Fully satisfied with themselfes, they settle down comfortably and gather in the crops, the well-earned rewards for good accomplishment, while enjoying the shining charme of Venus putting everything in sweet light. The card can also stand for health, or successful reconvalescence after illness or injury. On the darker side, the Nine of Disks can get so self-satisfied with material gain and succes, that they forget about anything else."
+  },
+  "d-10": {
+    "name": "Ten of Disks - Wealth",
+    "element": "Earth",
+    "shortDescription": "Material security, completion of success. Laziness, mental dullness, greed, gluttonous.",
+    "longDescription": "With the Ten of Disks the element of Earth has reached Malkuth, the final place of active manifestation - Assiah meets Assiah - and the Disks are in their very own homeworld. Therefore, the Ten of Disks are at the point where their richest potentials unfold, getting settled and staid, realizing the complete amount of material gain. Also, the Ten of Disks is the very last of the numbered cards, representing the completion of work, the full circle of Earth. On the dark side, the Ten of Disks become fat, lazy, blinded by wealth and even greedy for more, then being busy with grabbing together more riches. When richdom gets big, it needs a ventile to not become dull, a concentration on science or emotion to not get buried in nothing but earth."
+  },
+  "d-k": {
+    "name": "Knight of Disks",
+    "element": "Earth",
+    "shortDescription": "Clever in material matters, industrious, reliable. Stubborness, dullness, stagnant.",
+    "longDescription": "The Knight of Disks represents the Fire in the element of Earth, and with Earth surpressing Fire, the materialism is the dominant aspect in this card, showing the Knight as a complex person of amazing strength, representing Earth in its function as provider of life. The Knight of Disks is industrious and patient, steady and reliable, clever in material matters. He is the one working without asking much, concentrating on his tasks without getting distracted by mindgames or high flying ideas. With more Earth than Fire and lacking the qualities of Air, the King of Disks is more dedicated to making but to thinking, his success results from instinct and pragmatism rather than from intellect or knowledge. Further, the King of Disks lacks the emotional depth of Water, therefore he can have difficulties to understand or relate to others, he can be self-centered and sullen, intolerant and unable to put any interest in anything outside his own deeds and doings. At the darkest side, the Knight of Disks can turn stubborn and even stupid, clumsy and jelous on anyone that seems higher than himself, arousing over tidbits and butting in everything, yet cowardish and unwilling to change himself."
+  },
+  "d-q": {
+    "name": "Queen of Disks",
+    "element": "Earth",
+    "shortDescription": "Kind, charming, truthful, stable, sensual. Moody, foolish, dependent, undecided.",
+    "longDescription": "The Queen of Disks is the mother of her element, the water in the earth, which makes her the perfect mother, conforming and emotional as for the water and stable and reliable as for the Earth. The Queen of Disks is kind and tender, friendly and good-hearted, she has fine instincts and intuitions. She is strong and sensitive, protects her house and family and cares as well for emotional and material well-being. She is calm and practicable and can be a good, industrious worker. Beneath the calm surface, the Queen of Disks can tend to lust and debauchery, fond of intoxicating stimulants, but she keeps it hidden. At the best, she will know that the dose makes the poison - at the bad, she won't. On the dark side, the Queen of Disks lacks both the qualities of Air and Water, therefore she can get foolish and rather unintelligent, without pride and spirit, easily getting in needless dependence and being too weak to free herself - or even worse: not even trying to get free and independent."
+  },
+  "d-p1": {
+    "name": "Prince of Disks",
+    "element": "Earth",
+    "shortDescription": "Unwavering, enduring, practical, reasonable. Corruption, coldness, stubbornness, avarice.",
+    "longDescription": "The Prince of Disks represents the Air in the element of Earth, he is stable and industrious and also thoughtful and inventive when it comes to improve matters. Nevertheless, the Earth puts the brakes on the Air, therefore the Prince of Disks is slow in following and developing his plans and ideas, yet he is steady and unwavering - once on his path, he is going forward towards his goal. The Prince of Disks can seem a bit cold in his emotions sometimes, yet he values his comfort and beauty. He is patient and tolerant, but once in rage, he hardly forgives. On the shadow site, the Prince of Disks can get stubborn and ignorant, overly piqued on anything not belonging to his related surrounding, and phlegmatic up to total stagnation."
+  },
+  "d-p2": {
+    "name": "Princess of Disks",
+    "element": "Earth",
+    "shortDescription": "Sensitivity, generosity, kindness, faith. Illogical, dependent, pushover.",
+    "longDescription": "The Princess of Disks represents the Earth in the Earth, thus she is the pure manifestation of the qualities of Assiah, the physical world of making and growing. She is the last of the court cards and therefore implies a new begin of the circle, which could mean the beginning of a new prject or a new physical creation. The Princess of Disks is warm-hearted, sensual and generous, an unwavering and concentrated person with all the reliable stability of the Earth. Yet she lacks Fire and Air, as well as the conforming qualities of Water, she can easily be a little too dependent from outside influences but nevertheless being unable to really adapt to others. On the dark side the Princess of Disks can get illogical, prodigal and wasteful, dissipating her ideas and lacking the ability to recognize facts. When in bad mood, she's as adaptable as a stubborn, nasty child."
   }
 }
