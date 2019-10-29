@@ -123,6 +123,7 @@ header {
     margin-top: 1em;
     .cardWrapper {
       width: 150px;
+      text-align: center;
       img {
         width: 100%;
         height: auto;
@@ -130,30 +131,21 @@ header {
     }
     
   }
-
-  .order {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    width: 100%;
-    margin-top: .5em;
-  }
-
-  .orderWrapper {
-    width: 100%;
-    margin-top: .5em;
-  }
 }
 
 .spreadWrapper {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: .5fr 3fr .5fr;
   grid-template-rows: 2fr 2fr 2fr;
   grid-template-areas: ". row1 ."
                        ". row2 ."
                        ". row3 .";
   
   padding-top: 4em;
+
+  .rowDivider {
+    width: 3em;
+  }
 
   .row1 {
     grid-area: row1;
