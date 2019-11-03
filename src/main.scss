@@ -252,5 +252,34 @@ header {
     }
   
   }                     
+}
+
+/* SHORT DESCRIPTION MODAL */
+
+.shortDescModal {
+  background-color: $silk;
+  color: $charcoal;
+  text-align: center;
+  border: 1px solid $charcoal;
+  width: 350px;
+  padding: 11px;
+  position: absolute;
+  left: 50%;
+  top: 6em;
+  transform: translateX(-50%);
   
+  p {
+    margin-bottom: 7px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* LONG DESCRIPTION MODAL */ 
+
+.longDescModal {
+  background-color: $silk;
+  color: $charcoal;
 }
