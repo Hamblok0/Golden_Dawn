@@ -7,6 +7,9 @@ const LongDescription = props => {
             <div className="longDescTitle">
                 <h1>{props.card.name}</h1>
             </div>
+            <div>
+                <img src={props.card.url}/>
+            </div>
             <div className="longDescBody">
                 <p>Short Description: {props.card.shortDescription}</p>
                 <p>Detail: {props.card.longDescription}</p>
