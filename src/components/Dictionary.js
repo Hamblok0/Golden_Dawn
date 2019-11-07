@@ -1,7 +1,8 @@
 import React from "react";
-import card from "../img/card.jpg";
+import cardData from "../data/cardData.json";
 
-const Dictionary = () => {
+const Dictionary = props => {
+
   return (
     <div className="dictWrapper">
       <h1>Major Arcana</h1>
