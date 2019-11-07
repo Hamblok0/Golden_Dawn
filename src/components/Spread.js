@@ -79,7 +79,7 @@ const Spread = () => {
           <h3>Current Path</h3>
           <div className="triad">
             <div className="cardWrapper">
-              <img src={imgs[3]} onClick={() => toggleShort(deck[13], imgs[3])}/>
+              <img src={imgs[3]} onClick={() => toggleShort(deck[3], imgs[3])}/>
               <h3>4</h3>
             </div>
             <div className="cardWrapper">
