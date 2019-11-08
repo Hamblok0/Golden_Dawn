@@ -51,11 +51,12 @@ const Spread = () => {
   const [shortDesc, setShortDesc] = useState({active: false, data: null});
   const [longDesc, setLongDesc] = useState({active: false, data: null});
 
+  const style = [{"justifyContent": "flex-end"}, {"width": "400px"}];
 
   return (
     <div className="spreadWrapper">
       {shortDesc.active && <ShortDescription card={shortDesc.data} toggleLong={toggleLong} />}
-      {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} />}
+      {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} style={style}/>}
       <div className="row1">
         <div className="altPath">
           <h3>Alternate Path</h3>
