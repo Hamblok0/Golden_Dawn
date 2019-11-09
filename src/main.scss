@@ -22,19 +22,17 @@ body {
 
 header {
   background-color: $charcoal;
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: 1fr 3fr 1fr;
   height: 73px;
   opacity: $opacity;
   color: $paper;
-  grid-template-areas: "title . hNav";
 
   .title {
     display: flex;
     align-items: center;
     opacity: $opacity;
-    grid-area: title;
-
     h1 {
       display: inline-block;
       margin-left: 2rem;
@@ -47,13 +45,16 @@ header {
     align-items: center;
     justify-content: flex-end;
     opacity: $opacity;
-    grid-area: hNav;
-
     h1 {
       margin-right: 2rem;
       display: inline-block;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       text-align: right;
+    }
+    svg {
+      margin-right: 2rem;
+      margin-left: 2rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -76,27 +77,6 @@ header {
   }
 }
 
-.homeWrapper {
-  .intro {
-    text-align: center;
-    color: $charcoal;
-    font-size: 1.7em;
-    padding: 4em 2em 2em 2em;
-  }
-  .navWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .readingBut {
-    @include homeNav();
-    margin-right: 60px;
-  }
-  .dictBut {
-    @include homeNav();
-    margin-left: 60px;
-  }
-}
 
 /* SPREAD */
 
@@ -247,7 +227,7 @@ header {
   align-content: space-between;
   img {
     width: 180px;
-    height: 100%;
+    height: 280px;
     border: 1px solid $charcoal;
   }
 }
@@ -313,7 +293,7 @@ header {
   text-align: center;
   img {
     width: 280px;
-    height: 400px;
+    height: 420px;
     border: 1px solid $charcoal;
   }
   h1 {
@@ -332,4 +312,21 @@ header {
     margin-top: 20px;
     font-size: 20px;
   }
+}
+
+/* Log In Modal */
+
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .40);
+  
+}
+
+.loginBody {
+  align-self: center;
 }
