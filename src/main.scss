@@ -376,3 +376,29 @@ header {
   text-align: right;
   float: bottom;
 }
+
+/* User Drop Modal */ 
+.userDrop {
+  position: absolute;
+  top: 73px;
+  right: 0;
+  border-radius: 0 0 0 3px;
+  background-color: rgba(55, 55, 55, .9);
+  padding: 11px 28px 11px 28px;
+}
+
+.userDropBody {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    color: $paper;
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+
+  a:visited {
+    color: $paper;
+  }
+}
