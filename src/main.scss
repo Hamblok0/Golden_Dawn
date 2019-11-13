@@ -242,6 +242,35 @@ header {
   }
 }
 
+/* READ HISTORY */
+
+.historyWrapper {
+  margin-top: 50px;
+  justify-items: center;
+  text-align: center;
+}
+
+.histories {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+}
+
+.historyPreview {
+  height: 250px;
+  width: 330px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
 /* SHORT DESCRIPTION MODAL */
 
 .shortDescModal {
