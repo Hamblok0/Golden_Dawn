@@ -246,29 +246,47 @@ header {
 
 .historyWrapper {
   margin-top: 50px;
-  justify-items: center;
   text-align: center;
 }
 
 .histories {
   margin-top: 50px;
   display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-  justify-content: space-around;
+  flex-flow: wrap row;
+  justify-content: center;
 }
 
 .history {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  background-color: $silk;
+  height: 320px;
+  width: 400px;
+  border-radius: 3px;
+  box-shadow: 7px 7px 15px rgba(55, 55, 55, 0.5);
+}
+
+.previewWrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .historyPreview {
-  height: 250px;
+  height: 215px;
   width: 330px;
-  background-position: center;
+  background-position: 0 -90px;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
+  margin: 15px;
+  border: 2px solid $silk;
+  box-shadow: 7px 7px 15px rgba(55, 55, 55, 0.5);
+}
+
+.timestamp {
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 /* SHORT DESCRIPTION MODAL */
