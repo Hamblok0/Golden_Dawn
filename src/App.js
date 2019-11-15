@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="main">
       <Header />
-      <ReadHistory />
+      <Spread />
     </div>
   );
 };
