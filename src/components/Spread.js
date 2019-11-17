@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import cardData from "../data/cardData.json";
+import defaultDeck from "../data/newDeck.json";
+import defaultCard from "../img/card.jpg";
 import ShortDescription from "./Modals/ShortDescription";
 import LongDescription from "./Modals/LongDescription";
+import ShuffleMain from "./Modals/ShuffleMain";
 
 const Spread = () => {
   const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/"
-  const cards = ['t-0', 't-1', 't-2', 't-3', 't-4', 't-5', 't-6', 't-7', 't-8', 't-9', 't-10', 't-11', 't-12', 't-13', 't-14', 't-15',
-                't-16', 't-17', 't-18', 't-19', 't-20', 't-21', 'w-1', 'w-2', 'w-3', 'w-4', 'w-5', 'w-6', 'w-7', 'w-8', 'w-9', 'w-10',
-                'w-k', 'w-q', 'w-p1', 'w-p2', 's-1', 's-2', 's-3', 's-4', 's-5', 's-6', 's-7', 's-8', 's-9', 's-10', 's-k', 's-q', 's-p1',
-                's-p2', 'c-1', 'c-2', 'c-3', 'c-4', 'c-5', 'c-6', 'c-7', 'c-8', 'c-9', 'c-10', 'c-k', 'c-q', 'c-p1', 'c-p2', 'd-1', 'd-2',
-                'd-3', 'd-4', 'd-5', 'd-6', 'd-7', 'd-8', 'd-9', 'd-10', 'd-k', 'd-q', 'd-p1', 'd-p2'];
 
   const getCards = shuffledDeck => {
-    const urls = shuffledDeck.slice(0, 15).map(card => {
-      return endpoint + card + '.png';
-    });
-    return urls;
+    if (!shuffledDeck) {
+      return new Array(15).fill(defaultCard)
+    } else {
+      return shuffledDeck.slice(0, 15).map(card => {
+        return endpoint + card + '.png';
+      });
+    }
   }
 
   const shuffle = (deck, shuffles) => {
@@ -46,10 +47,20 @@ const Spread = () => {
     }
   }
   
-  const [deck, setDeck] = useState(shuffle(cards, 3));
+  const [deck, setDeck] = useState(null);
   const [imgs, getImgs] = useState(getCards(deck));
   const [shortDesc, setShortDesc] = useState({active: false, data: null});
   const [longDesc, setLongDesc] = useState({active: false, data: null});
+  const [shortShuffle, setShortShuffle] = useState(false);
+  const [longShuffle, setLongShuffle] = useState(false);
+
+
+
+  useEffect(() => {
+    if (!deck) {
+      setLongShuffle(!longShuffle);
+    }
+  }, [deck]);
 
   const style = [{"justifyContent": "flex-end"}, {"width": "400px"}];
 
@@ -57,6 +68,7 @@ const Spread = () => {
     <div className="spreadWrapper">
       {shortDesc.active && <ShortDescription card={shortDesc.data} toggleLong={toggleLong} />}
       {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} style={style}/>}
+      {longShuffle && <ShuffleMain />}
       <div className="row1">
         <div className="altPath">
           <h3>Alternate Path</h3>
