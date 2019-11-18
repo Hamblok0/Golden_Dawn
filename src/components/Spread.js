@@ -48,27 +48,24 @@ const Spread = () => {
   }
   
   const [deck, setDeck] = useState(null);
-  const [imgs, getImgs] = useState(getCards(deck));
+  const [imgs, setImgs] = useState(getCards(deck));
   const [shortDesc, setShortDesc] = useState({active: false, data: null});
   const [longDesc, setLongDesc] = useState({active: false, data: null});
   const [shortShuffle, setShortShuffle] = useState(false);
-  const [longShuffle, setLongShuffle] = useState(false);
-
-
 
   useEffect(() => {
-    if (!deck) {
-      setLongShuffle(!longShuffle);
+    if (deck) {
+      setImgs(getCards(deck));
     }
-  }, [deck]);
-
+  }, [deck])
+  
   const style = [{"justifyContent": "flex-end"}, {"width": "400px"}];
 
   return (
     <div className="spreadWrapper">
       {shortDesc.active && <ShortDescription card={shortDesc.data} toggleLong={toggleLong} />}
-      {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} style={style}/>}
-      {longShuffle && <ShuffleMain />}
+      {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} style={style} />}
+      {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="row1">
         <div className="altPath">
           <h3>Alternate Path</h3>

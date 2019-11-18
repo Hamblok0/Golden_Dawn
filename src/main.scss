@@ -363,7 +363,7 @@ header {
   }
 }
 
-/* Log In Modal */
+/* LOG IN MODAL */
 
 .loginWrapper::before {
   background: inherit;
@@ -426,7 +426,7 @@ header {
   float: bottom;
 }
 
-/* User Drop Modal */ 
+/* USER DROP MODAL */ 
 .userDrop {
   position: absolute;
   top: 73px;
@@ -450,4 +450,62 @@ header {
   a:visited {
     color: $paper;
   }
+}
+
+/* SHUFFLE MODALS */ 
+
+.shuffleMainWrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(55, 55, 55, .60);
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.shuffleMain {
+  background-color: $silk;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  color: $charcoal;
+  height: 200px;
+  width: 375px;
+  border: 1px solid $charcoal;
+  border-radius: 3px;
+
+  p {
+    margin: 10px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+}
+
+.numberInput {
+  width: 80px;
+  height: 50px;
+  font-size: 35px;
+  background-color: $silk;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid $charcoal;
+  color: $charcoal;
+  align-self: center;
+  outline: none;
+  text-align: center;
 }
