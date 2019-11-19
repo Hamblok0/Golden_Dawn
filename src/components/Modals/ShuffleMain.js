@@ -12,7 +12,7 @@ const ShuffleMain = props => {
                 <p>Don't overthink it, just choose a number between 1-100 that feels right to you</p>
                 <form onSubmit={() => handleSubmit()}>
                     <input type="number" name="number" min="1" max="100" 
-                    value={number} onChange={(e) => updateNumber(e.target.value)} className="numberInput"/>
+                    value={number} onChange={e => updateNumber(e.target.value)} className="numberInput"/>
                 </form>
             </div>
         </div>

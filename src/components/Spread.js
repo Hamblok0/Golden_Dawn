@@ -5,6 +5,7 @@ import defaultCard from "../img/card.jpg";
 import ShortDescription from "./Modals/ShortDescription";
 import LongDescription from "./Modals/LongDescription";
 import ShuffleMain from "./Modals/ShuffleMain";
+import ShuffleDrop from "./Modals/ShuffleDrop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faRedoAlt, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
@@ -69,7 +70,8 @@ const Spread = () => {
       {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} style={style} />}
       {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="utilBar">
-        <FontAwesomeIcon icon={faRedoAlt}/>
+        {shortShuffle && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
+        <FontAwesomeIcon icon={faRedoAlt} onClick={() => setShortShuffle(!shortShuffle)} />
         <FontAwesomeIcon icon={faArchive}/>
         <FontAwesomeIcon icon={faQuestion}/>
       </div>
