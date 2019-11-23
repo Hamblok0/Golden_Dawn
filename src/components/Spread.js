@@ -7,7 +7,7 @@ import LongDescription from "./Modals/LongDescription";
 import ShuffleMain from "./Modals/ShuffleMain";
 import ShuffleDrop from "./Modals/ShuffleDrop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArchive, faRedoAlt, faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons'
 
 const Spread = () => {
   const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/"
@@ -72,6 +72,7 @@ const Spread = () => {
       <div className="utilBar">
         {shortShuffle && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
         <FontAwesomeIcon icon={faRedoAlt} onClick={() => setShortShuffle(!shortShuffle)} />
+        <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
         <FontAwesomeIcon icon={faArchive}/>
         <FontAwesomeIcon icon={faQuestion}/>
       </div>
