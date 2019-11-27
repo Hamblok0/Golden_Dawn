@@ -14,7 +14,7 @@ const Spread = () => {
 
   const getCards = shuffledDeck => {
     if (!shuffledDeck) {
-      return new Array(15).fill(defaultCard)
+      return new Array(15).fill(defaultCard);
     } else {
       return shuffledDeck.slice(0, 15).map(card => {
         return endpoint + card + '.png';
@@ -23,57 +23,66 @@ const Spread = () => {
   }
 
   const shuffle = (deck, shuffles) => {
+    let newDeck = [...deck];
     for (let s = 0; s < shuffles; s++) {
-      for (let i = deck.length - 1; i > 0; i--) {
+      for (let i = newDeck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [deck[i], deck[j]] = [deck[j], deck[i]];
+        [newDeck[i], newDeck[j]] = [newDeck[j], newDeck[i]];
       }
     }
-    return deck
+    return newDeck;
   }
 
   const toggleShort = (card, url) => {
-    if (shortDesc.data && shortDesc.data.id === card) {
-      setShortDesc({active: false, data: null});
+    if (modals.data && modals.data.id === card) {
+      setModals({...modals, shortDesc: false, data: {}});
     } else {
       const data = {...cardData[card], id: card, url: url}
-      setShortDesc({active: true, data: data});
+      setModals({...modals, shortDesc: true, data: data});
     }
   }
 
   const toggleLong = card => {
     if (card) {
-      setLongDesc({active: true, data: card});
-      setShortDesc({active: false, data: null});
+      setModals({...modals, shortDesc: false, longDesc: true})
     } else {
-      setLongDesc({active: false, data: null});
+      setModals({...modals, longDesc: false, data: {}});
     }
   }
+
+  let modalInit = {
+    data: {},
+    shortDesc: false,
+    longDesc: false,
+    shuffleDrop: false
+  };
   
   const [deck, setDeck] = useState(null);
-  const [imgs, setImgs] = useState(getCards(deck));
-  const [shortDesc, setShortDesc] = useState({active: false, data: null});
-  const [longDesc, setLongDesc] = useState({active: false, data: null});
-  const [shortShuffle, setShortShuffle] = useState(false);
+  const [imgs, setImgs] = useState(getCards(null));
+  const [modals, setModals] = useState(modalInit);
+  // const [shortDesc, setShortDesc] = useState({active: false, data: {}});
+  // const [longDesc, setLongDesc] = useState({active: false, data: {}});
+  // const [shortShuffle, setShortShuffle] = useState(false);
 
   useEffect(() => {
     if (deck) {
       setImgs(getCards(deck));
+      setModals(modalInit)
     }
-  }, [deck])
+  }, [deck]);
   
   const style = [{"justifyContent": "flex-end"}, {"width": "400px"}];
 
   return (
     <div className="spreadWrapper">
-      {shortDesc.active && <ShortDescription card={shortDesc.data} toggleLong={toggleLong} />}
-      {longDesc.active && <LongDescription card={longDesc.data} toggleLong={toggleLong} style={style} />}
+      {modals.shortDesc && <ShortDescription card={modals.data} toggleLong={toggleLong} />}
+      {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} style={style} />}
       {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="utilBar">
-        {shortShuffle && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
-        <FontAwesomeIcon icon={faRedoAlt} onClick={() => setShortShuffle(!shortShuffle)} />
+        {modals.shuffleDrop && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
+        <FontAwesomeIcon icon={faRedoAlt} onClick={() => setModals({...modals, shuffleDrop: !modals.shuffleDrop})} />
         <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
-        <FontAwesomeIcon icon={faArchive}/>
+        <FontAwesomeIcon icon={faArchive} />
         <FontAwesomeIcon icon={faQuestion}/>
       </div>
       <div className="spread">
