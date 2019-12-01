@@ -29,10 +29,20 @@ header {
   opacity: $opacity;
   color: $paper;
 
+  a {
+    color: $paper;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $paper;
+  }
+
   .title {
     display: flex;
     align-items: center;
     opacity: $opacity;
+
     h1 {
       display: inline-block;
       margin-left: 2rem;
