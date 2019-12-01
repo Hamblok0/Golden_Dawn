@@ -60,9 +60,6 @@ const Spread = () => {
   const [deck, setDeck] = useState(null);
   const [imgs, setImgs] = useState(getCards(null));
   const [modals, setModals] = useState(modalInit);
-  // const [shortDesc, setShortDesc] = useState({active: false, data: {}});
-  // const [longDesc, setLongDesc] = useState({active: false, data: {}});
-  // const [shortShuffle, setShortShuffle] = useState(false);
 
   useEffect(() => {
     if (deck) {
