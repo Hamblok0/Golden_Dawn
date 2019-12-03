@@ -10,8 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons'
 
 const Spread = () => {
-  const endpoint =
-    process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/";
+  const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/";
 
   const getCards = shuffledDeck => {
     if (!shuffledDeck) {
