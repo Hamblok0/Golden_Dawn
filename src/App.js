@@ -19,7 +19,8 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/goldendawn" component={Spread} />
-          <Route path="/dictionary" component={DictMenu} />
+          <Route path="/dictionary" exact component={DictMenu} />
+          <Route path="/dictionary/:id" component={Dictionary}/>
           <Route path="/archive" component={ReadHistory} />
         </Switch>
       </Router>

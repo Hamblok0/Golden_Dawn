@@ -199,6 +199,14 @@ header {
 
   text-align: center;
   margin-top: 2rem;
+
+  a {
+    color: $charcoal;
+  }
+
+  a:visited {
+    color: $charcoal;
+  }
   
   .dictSwords {
     grid-area: swords;
