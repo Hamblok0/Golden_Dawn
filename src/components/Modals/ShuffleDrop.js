@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const ShuffleDrop = props => {
     const [number, updateNumber] = useState(1);
     const handleSubmit = e => {
-        props.setDeck(props.shuffle(props.deck, number))
-        e.preventDefault();
-    }
+      props.setDeck(props.shuffle(props.deck, number));
+      e.preventDefault();
+    };
     return (
         <div className="shuffleDrop">
             <div className="triangle"></div>

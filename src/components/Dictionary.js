@@ -10,24 +10,24 @@ const Dictionary = props => {
   }
 
   const setSuite = suite => {
-    let cards = []
-    for (let card in cardData) {  
+    let cards = [];
+    for (let card in cardData) {
       if (card.split("")[0] === suite) {
         cards.push(card);
       }
     }
     return cards;
-  }
+  };
 
   const [cards, getCards] = useState(setSuite(props.match.params.id));
   const [imgs, getImgs] = useState(() => {
     return cards.map(card => {
-      return endpoint + card + '.png';
+      return endpoint + card + ".png";
     });
-  })
+  });
 
-  const [longDesc, setLongDesc] = useState({active: false, data: null})
-  const style = [{"justifyContent": "center"}, {"width": "600px"}]
+  const [longDesc, setLongDesc] = useState({ active: false, data: null });
+  const style = [{ justifyContent: "center" }, { width: "600px" }];
 
   return (
     <div className="dictWrapper">

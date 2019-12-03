@@ -10,17 +10,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons'
 
 const Spread = () => {
-  const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/"
+  const endpoint =
+    process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/";
 
   const getCards = shuffledDeck => {
     if (!shuffledDeck) {
       return new Array(15).fill(defaultCard);
     } else {
       return shuffledDeck.slice(0, 15).map(card => {
-        return endpoint + card + '.png';
+        return endpoint + card + ".png";
       });
     }
-  }
+  };
 
   const shuffle = (deck, shuffles) => {
     let newDeck = [...deck];
@@ -31,24 +32,24 @@ const Spread = () => {
       }
     }
     return newDeck;
-  }
+  };
 
   const toggleShort = (card, url) => {
     if (modals.data && modals.data.id === card) {
-      setModals({...modals, shortDesc: false, data: {}});
+      setModals({ ...modals, shortDesc: false, data: {} });
     } else {
-      const data = {...cardData[card], id: card, url: url}
-      setModals({...modals, shortDesc: true, data: data});
+      const data = { ...cardData[card], id: card, url: url };
+      setModals({ ...modals, shortDesc: true, data: data });
     }
-  }
+  };
 
   const toggleLong = card => {
     if (card) {
-      setModals({...modals, shortDesc: false, longDesc: true})
+      setModals({ ...modals, shortDesc: false, longDesc: true });
     } else {
-      setModals({...modals, longDesc: false, data: {}});
+      setModals({ ...modals, longDesc: false, data: {} });
     }
-  }
+  };
 
   let modalInit = {
     data: {},
@@ -56,7 +57,7 @@ const Spread = () => {
     longDesc: false,
     shuffleDrop: false
   };
-  
+
   const [deck, setDeck] = useState(null);
   const [imgs, setImgs] = useState(getCards(null));
   const [modals, setModals] = useState(modalInit);
@@ -64,11 +65,11 @@ const Spread = () => {
   useEffect(() => {
     if (deck) {
       setImgs(getCards(deck));
-      setModals(modalInit)
+      setModals(modalInit);
     }
   }, [deck]);
-  
-  const style = [{"justifyContent": "flex-end"}, {"width": "400px"}];
+
+  const style = [{ justifyContent: "flex-end" }, { width: "400px" }];
 
   return (
     <div className="spreadWrapper">
