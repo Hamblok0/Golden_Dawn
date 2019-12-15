@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
-  const [loggedIn, setLogIn] = useState(true);
+  const [loggedIn, setLogIn] = useState(false);
   const [logInToggle, toggleLogIn] = useState(false);
   const [userDrop, toggleUserDrop] = useState(false);
   return (
