@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { 
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import decode from "jwt-decode";
+import Cookie from "js-cookie";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Spread from "./components/Spread";
@@ -12,10 +14,12 @@ import Dictionary from "./components/Dictionary";
 import ReadHistory from "./components/ReadHistory";
 
 const App = () => {
+  const [user, setUser] = useState(Cookie.get("tarot.io"));
+
   return (
     <div className="main">
       <Router>
-        <Header />
+        <Header user={user} setUser={setUser}/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/goldendawn" component={Spread} />

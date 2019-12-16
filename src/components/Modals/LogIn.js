@@ -14,26 +14,34 @@ const LogIn = props => {
         password: ""
     });
 
-    const createUser = (e, state) => {
+    const createUser = (e) => {
         Axios.put(api, signUp, { headers: { 'Content-Type': 'application/json' } })
         .then(response => {
-            console.log(response)
-        });
+          props.setUser(response.data);
+          props.toggleLogIn(false);  
+        })
+        .catch(err => {
+            console.log(err);
+        })
         e.preventDefault()
     }
 
-    const signIn = (e, state) => {
-        Axios.post(api, logIn)
+    const signIn = (e) => {
+        Axios.post(api, logIn, { headers: { 'Content-Type': 'application/json' } })
         .then(response => {
-            console.log(response)
+            props.setUser(response.data);
+            props.toggleLogIn(false);
+        })
+        .catch(err => {
+            console.log(JSON.stringify(err));
         })
         e.preventDefault()
     }
     
     return (
-        <div className="loginWrapper">
+        <div className="loginWrapper" onClick={() => props.toggleLogIn(false)}>
             {type === "login" &&
-                <div className="loginBody">
+                <div className="loginBody" onClick={e => e.stopPropagation()}>
                     <div className="loginContent">
                         <div className="loginTitle">
                             <h1>Sign In</h1>
@@ -42,7 +50,7 @@ const LogIn = props => {
                             <h2>Username:</h2>
                             <input type="text" name="email" value={logIn.email} onChange={e => updateLogin({ ...logIn, email: e.target.value })}/>
                             <h2>Password:</h2>
-                            <input type="text" name="password" value={logIn.password} onChange={e => updateLogin({ ...logI1n, password: e.target.value })}/>
+                            <input type="text" name="password" value={logIn.password} onChange={e => updateLogin({ ...logIn, password: e.target.value })}/>
                             <button type="submit">Submit</button>
                         </form>
                         <div className="loginChange">
@@ -52,7 +60,7 @@ const LogIn = props => {
                 </div>
             }
             {type === "register" &&
-                <div className="loginBody">
+                <div className="loginBody" onClick={e => e.stopPropagation()}>
                     <div className="loginTitle">
                         <h1>Register</h1>
                     </div>
