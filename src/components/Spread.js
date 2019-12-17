@@ -9,9 +9,9 @@ import ShuffleDrop from "./Modals/ShuffleDrop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons'
 
-const Spread = () => {
+const Spread = props => {
   const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/";
-
+  
   const getCards = shuffledDeck => {
     if (!shuffledDeck) {
       return new Array(15).fill(defaultCard);

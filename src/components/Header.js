@@ -27,7 +27,7 @@ const Header = props => {
         (<h1 onClick={() => toggleLogIn(true)}>Log In/Register</h1>)}
       </div>
       {logInToggle && <LogIn toggleLogIn={toggleLogIn} setUser={props.setUser} />}
-      {userDrop && <UserDrop toggleDrop={toggleUserDrop} />}
+      {userDrop && <UserDrop toggleDrop={toggleUserDrop} setUser={props.setUser}/>}
     </header>
   );
 };
