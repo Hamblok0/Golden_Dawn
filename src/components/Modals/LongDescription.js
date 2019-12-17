@@ -2,8 +2,8 @@ import React from "react";
 
 const LongDescription = props => {
     return (
-        <div className="longDescWrapper" onClick={() => props.toggleLong(null)} style={props.style[0]}>
-            <div className="longDescModal" onClick={e => e.stopPropagation()} style={props.style[1]}>
+        <div className="longDescWrapper" onClick={() => props.toggleLong(null)} >
+            <div className="longDescModal" onClick={e => e.stopPropagation()} >
                 <h1>{props.card.name}</h1>
                 <div className="longDescImg">
                     <img src={props.card.url}/>

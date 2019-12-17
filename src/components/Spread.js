@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import decode from "jwt-decode";
 import cardData from "../data/cardData.json";
 import defaultDeck from "../data/newDeck.json";
 import defaultCard from "../img/card.jpg";
@@ -11,7 +12,7 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 const Spread = props => {
   const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/";
-  
+
   const getCards = shuffledDeck => {
     if (!shuffledDeck) {
       return new Array(15).fill(defaultCard);
@@ -50,12 +51,25 @@ const Spread = props => {
     }
   };
 
-  let modalInit = {
+  let modalInit ={
     data: {},
     shortDesc: false,
     longDesc: false,
     shuffleDrop: false
-  };
+  }
+
+  const [user, setUser] = useState(() => {
+    if (props.user) {
+      try {
+        return decode(props.user);
+      } catch(err) {
+        console.log(err);
+        return undefined;
+      }
+    } else {
+      return undefined; 
+    }
+  });
 
   const [deck, setDeck] = useState(null);
   const [imgs, setImgs] = useState(getCards(null));
@@ -68,19 +82,18 @@ const Spread = props => {
     }
   }, [deck]);
 
-  const style = [{ justifyContent: "flex-end" }, { width: "400px" }];
 
   return (
     <div className="spreadWrapper">
       {modals.shortDesc && <ShortDescription card={modals.data} toggleLong={toggleLong} />}
-      {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} style={style} />}
+      {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} />}
       {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="utilBar">
         {modals.shuffleDrop && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
         <FontAwesomeIcon icon={faRedoAlt} onClick={() => setModals({...modals, shuffleDrop: !modals.shuffleDrop})} />
         <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
         <FontAwesomeIcon icon={faArchive} />
-        <FontAwesomeIcon icon={faQuestion}/>
+        <FontAwesomeIcon icon={faQuestion} />
       </div>
       <div className="spread">
         <div className="row1">

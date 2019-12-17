@@ -7,9 +7,9 @@ const UserDrop = props => {
             <div className="userDropBody">
                 <Link to="/archive" onClick={() => props.toggleDrop(false)}>Reading History</Link>
                 <Link onClick={() => props.toggleDrop(false)}>About Thoth Tarot</Link>
-                <Link onClick={() => {
+                <Link to="/" onClick={() => {
                     props.toggleDrop(false)
-                    props.setUser(undefined);
+                    props.setUser(undefined)
                 }}>Sign Out</Link>
             </div>
         </div>
