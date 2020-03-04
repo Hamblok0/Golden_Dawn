@@ -1,7 +1,33 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import Axios from "axios";
+import decode from "jwt-decode";
 
-const ReadHistory = () => {
-    const endpoint = "https://ds7jrtsekfc2s.cloudfront.net/t-1.png" 
+const ReadHistory = props => {
+    const endpoint = process.env.CARDS;
+    const api = process.env.READINGS;
+
+    const [archives, updateArchive] = useState(undefined);
+
+    useEffect(() => {
+        const user = decode(props.user);
+        const readings = JSON.parse(user.archived)
+        if (user && readings) {
+            
+            const params = {
+                user: user.email,
+                readings
+            }
+            console.log(params)
+            Axios.get(api, { params })
+            .then(data => {
+                console.log(`DATA: ${JSON.stringify(data)}`);
+            })
+            .catch(err => {
+                console.log(`AXIOS ERR: ${err}`);
+            })
+        }
+    },[archives])
+    
     return (
         <div className="historyWrapper">
             <h1>Saved Readings</h1>
