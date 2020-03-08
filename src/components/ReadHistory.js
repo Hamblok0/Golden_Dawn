@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import decode from "jwt-decode";
+import { format } from "date-fns";
 
 const ReadHistory = props => {
     const endpoint = "https://ds7jrtsekfc2s.cloudfront.net/";
@@ -26,7 +27,11 @@ const ReadHistory = props => {
                     loading: false,
                     readings: response.data.Responses.Archives.map(reading => {
                         const img = `${endpoint}` + `${JSON.parse(reading.deck)[0]}` + '.png';
-                        return {...reading, img};
+                        const formatted = {
+                            date: format(reading.date, "PPP").split(",").join(" "),
+                            time: format(reading.date, "p")
+                        }
+                        return {...reading, img, formatted};
                     })
                 }
                 updateArchive(data)
@@ -48,8 +53,8 @@ const ReadHistory = props => {
                                 <div className="historyPreview" style={{"backgroundImage": `url(${reading.img})`}}></div>
                             </div>
                             <div className="timestamp">
-                                <p>11-11-19</p>
-                                <p>3:00PM</p>
+                                <p>{reading.formatted.date}</p>
+                                <p>{reading.formatted.time}</p>
                             </div>
                         </div>
                     )}
