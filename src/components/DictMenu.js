@@ -32,7 +32,7 @@ const DictMenu = () => {
       <div className="dictDisks">
         <Link to="/dictionary/d">
           <img src={`${endpoint}d-1.png`} alt="card"/>
-          <h3>Suit of Disks</h3>
+          <h3>Suite of Disks</h3>
         </Link>
       </div>
     </div>
