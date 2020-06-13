@@ -17,7 +17,7 @@ const Header = props => {
         </Link>
       </div>
       <div className="headerNav">
-        <Link to='goldendawn'>
+        <Link to='reading/goldendawn'>
           <h1>Get A Reading</h1>
         </Link>
         <Link to='dictionary'>
