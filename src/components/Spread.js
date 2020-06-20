@@ -13,7 +13,8 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 
 const Spread = props => {
-  const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/";
+  const endpoint = process.env.CARDS;
+
   const setSpread = () => {
     if (props.match.params.id) {
       switch (props.match.params.id) {
@@ -22,7 +23,7 @@ const Spread = props => {
         default:
           return "An error occurred"
       }
-    }
+    } 
   }
 
   const getCards = shuffledDeck => {

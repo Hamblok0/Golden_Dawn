@@ -3,7 +3,7 @@ import LongDescription from "./Modals/LongDescription";
 import cardData from "../data/cardData.json";
 
 const Dictionary = props => {
-  const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/"
+  const endpoint = process.env.CARDS
   
   const toggleLong = () => {
     setLongDesc({active: false, data: null});

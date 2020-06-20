@@ -4,8 +4,8 @@ import decode from "jwt-decode";
 import { format } from "date-fns";
 
 const ReadHistory = (props) => {
-  const endpoint = "https://ds7jrtsekfc2s.cloudfront.net/";
-  const api = "https://r0pamrufoj.execute-api.us-east-2.amazonaws.com/dev/archives";
+  const endpoint = process.env.CARDS;
+  const api = process.env.BACKEND + "/archive";
   const [archives, updateArchive] = useState({
     loading: true,
     readings: [],

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DictMenu = () => {
-  const endpoint = process.env.cloudfront || "https://ds7jrtsekfc2s.cloudfront.net/"
+  const endpoint = process.env.CARDS
   return (
     <div className="dictMenuWrapper">
       <div className="dictSwords">

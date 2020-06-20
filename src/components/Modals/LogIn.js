@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 const LogIn = props => {
-    const api = "https://r0pamrufoj.execute-api.us-east-2.amazonaws.com/dev" + "/user"
+    const api = process.env.BACKEND + "/user"
     const [type, setType] = useState("login");
     const [logIn, updateLogin] = useState({
         email: "",
