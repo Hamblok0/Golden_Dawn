@@ -9,7 +9,7 @@ import ShuffleMain from "./Modals/ShuffleMain";
 import ShuffleDrop from "./Modals/ShuffleDrop";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons'
+import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons';
 
 
 const Spread = props => {
