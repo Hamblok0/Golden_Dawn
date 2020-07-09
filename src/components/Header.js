@@ -20,7 +20,7 @@ const Header = props => {
         <Link to="/reading">
           <h1>Get A Reading</h1>
         </Link>
-        <Link to='dictionary'>
+        <Link to='/dictionary'>
           <h1>Card Dictionary</h1>
         </Link>
         {props.user ? (<FontAwesomeIcon icon={faBars} onClick={() => toggleUserDrop(!userDrop)}> </FontAwesomeIcon>) : 
