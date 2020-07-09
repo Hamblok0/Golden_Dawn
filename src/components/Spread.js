@@ -109,11 +109,12 @@ const Spread = props => {
       {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} />}
       {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="utilBar">
-        {fromPrevious.deck ? 
+        {fromPrevious ? 
           <>
             {modals.shuffleDrop && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
           </> :
-          <> 
+          <>
+            {modals.shuffleDrop && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />} 
             <FontAwesomeIcon icon={faRedoAlt} onClick={() => setModals({...modals, shuffleDrop: !modals.shuffleDrop})} />
             <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
             <FontAwesomeIcon icon={faArchive} />
