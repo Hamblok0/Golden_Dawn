@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import decode from "jwt-decode";
 import { format } from "date-fns";
 
 const ReadHistory = (props) => {
   const endpoint = process.env.CARDS;
-  const api = process.env.BACKEND + "/archive";
+  const api = process.env.BACKEND + "/archives";
   const [archives, updateArchive] = useState({
     loading: true,
     readings: [],
@@ -49,10 +50,12 @@ const ReadHistory = (props) => {
           {archives.readings.map((reading) => (
             <div className="history" key={reading.id}>
               <div className="previewWrapper">
-                <div
-                  className="historyPreview"
-                  style={{ backgroundImage: `url(${reading.img})` }}
-                ></div>
+                <Link to={{ pathname: "/reading", state: { ...reading }}}>
+                  <div
+                    className="historyPreview"
+                    style={{ backgroundImage: `url(${reading.img})` }}
+                  ></div>
+                </Link>
               </div>
               <div className="timestamp">
                 <p>{reading.formatted.date}</p>

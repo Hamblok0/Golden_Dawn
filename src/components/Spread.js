@@ -14,23 +14,31 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 const Spread = props => {
   const endpoint = process.env.CARDS;
+  const fromPrevious = props.location.state;
 
-  const setSpread = () => {
-    if (props.match.params.id) {
-      switch (props.match.params.id) {
-        case "goldendawn":
-          return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
-        default:
-          return "An error occurred"
-      }
-    } 
+  const getDeck = () => {
+    if (fromPrevious && fromPrevious.deck) {
+      return JSON.parse(fromPrevious.deck);
+    } else {
+      return null;
+    }
   }
 
-  const getCards = shuffledDeck => {
-    if (!shuffledDeck) {
+  const setSpread = () => {
+    return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
+    // switch (fromPrevious.type) {
+    //   case "Golden_Dawn":
+    //     return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
+    //   default:
+    //     return "An error occurred"
+    // }
+  }
+
+  const getCards = () => {
+    if (!deck) {
       return new Array(15).fill(defaultCard);
     } else {
-      return shuffledDeck.slice(0, 15).map(card => {
+      return deck.slice(0, 15).map(card => {
         return endpoint + card + ".png";
       });
     }
@@ -84,17 +92,16 @@ const Spread = props => {
     }
   });
 
-  const [deck, setDeck] = useState(null);
-  const [imgs, setImgs] = useState(getCards(null));
+  const [deck, setDeck] = useState(getDeck());
+  const [imgs, setImgs] = useState(getCards());
   const [modals, setModals] = useState(modalInit);
 
   useEffect(() => {
     if (deck) {
-      setImgs(getCards(deck));
+      setImgs(getCards());
       setModals(modalInit);
     }
   }, [deck]);
-
 
   return (
     <div className="spreadWrapper">
