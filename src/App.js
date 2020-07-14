@@ -30,10 +30,11 @@ const App = () => {
         <Header user={user} setUser={setUser}/>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/reading" render={(props) => (<Spread {...props} user={user} />)} />
+          <Route path="/reading" />
           <Route path="/dictionary" exact component={DictMenu} />
           <Route path="/dictionary/:id" component={Dictionary} />
           <Route path="/archive" render={(props) =>  user ? (<ReadHistory {...props} user={user} />) : (<Redirect to={{pathname: "/"}}/>)} />
+          <Route path="/archive/:id" render={(props) => (<Spread {...props} user={user} />)} />
         </Switch>
       </Router>
     </div>

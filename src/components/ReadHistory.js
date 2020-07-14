@@ -50,7 +50,7 @@ const ReadHistory = (props) => {
           {archives.readings.map((reading) => (
             <div className="history" key={reading.id}>
               <div className="previewWrapper">
-                <Link to={{ pathname: "/reading", state: { ...reading }}}>
+                <Link to={{ pathname: `/archive/${reading.id}`, state: { ...reading }}}>
                   <div
                     className="historyPreview"
                     style={{ backgroundImage: `url(${reading.img})` }}
