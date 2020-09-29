@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState, useContext} from "react";
+import { UserContext } from "../Contexts/UserContext";
 import { Link } from "react-router-dom";
 import LogIn from "./Modals/LogIn";
 import UserDrop from "./Modals/UserDrop";
@@ -6,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = props => {
+  const [user] = useContext(UserContext);
   const [logInToggle, toggleLogIn] = useState(false);
   const [userDrop, toggleUserDrop] = useState(false);
 
@@ -23,11 +25,11 @@ const Header = props => {
         <Link to='/dictionary'>
           <h1>Card Dictionary</h1>
         </Link>
-        {props.user ? (<FontAwesomeIcon icon={faBars} onClick={() => toggleUserDrop(!userDrop)}> </FontAwesomeIcon>) : 
+        {user ? (<FontAwesomeIcon icon={faBars} onClick={() => toggleUserDrop(!userDrop)}> </FontAwesomeIcon>) : 
         (<h1 onClick={() => toggleLogIn(true)}>Log In/Register</h1>)}
       </div>
-      {logInToggle && <LogIn toggleLogIn={toggleLogIn} setUser={props.setUser} />}
-      {userDrop && <UserDrop toggleDrop={toggleUserDrop} setUser={props.setUser}/>}
+      {logInToggle && <LogIn toggleLogIn={toggleLogIn} />}
+      {userDrop && <UserDrop toggleDrop={toggleUserDrop} />}
     </header>
   );
 };

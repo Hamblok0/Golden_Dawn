@@ -77,20 +77,7 @@ const Spread = props => {
     shortDesc: false,
     longDesc: false,
     shuffleDrop: false
-  }
-
-  const [user, setUser] = useState(() => {
-    if (props.user) {
-      try {
-        return decode(props.user);
-      } catch(err) {
-        console.log(err);
-        return undefined;
-      }
-    } else {
-      return undefined; 
-    }
-  });
+  };
 
   const [deck, setDeck] = useState(getDeck());
   const [imgs, setImgs] = useState(getCards());
