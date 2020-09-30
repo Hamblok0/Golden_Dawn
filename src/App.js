@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Cookie from "js-cookie";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Spread from "./components/Spread";

@@ -6,7 +6,7 @@ import UserDrop from "./Modals/UserDrop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const Header = props => {
+const Header = () => {
   const [user] = useContext(UserContext);
   const [logInToggle, toggleLogIn] = useState(false);
   const [userDrop, toggleUserDrop] = useState(false);
