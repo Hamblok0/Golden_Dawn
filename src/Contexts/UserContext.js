@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import usePrevious from "../Hooks/usePrevious";
+import { usePrevious } from "../Hooks/usePrevious";
 import Cookie from "js-cookie";
 import decode from "jwt-decode";
 
@@ -21,7 +21,7 @@ export const UserProvider = props => {
   const prevState = usePrevious(user);
 
   useEffect(() => {
-    if (user && !Cookie.get("tarot.io")) {
+    if (user && !Cookie.get("tarot.io") || (prevState && user) && (user.deck !== prevState.deck)) {
       Cookie.set("tarot.io", user);
     }
     if (!user && Cookie.get("tarot.io")) {
