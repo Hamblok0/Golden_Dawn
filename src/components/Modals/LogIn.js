@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../Contexts/UserContext";
 import Axios from "axios";
+import decode from "jwt-decode";
 
 const LogIn = (props) => {
   const api = process.env.BACKEND + "/user";
@@ -31,7 +32,7 @@ const LogIn = (props) => {
   const signIn = (e) => {
     Axios.post(api, logIn, { headers: { "Content-Type": "application/json" } })
       .then((response) => {
-        setUser(response.data);
+        setUser(decode(response.data));
         props.toggleLogIn(false);
       })
       .catch((err) => {
