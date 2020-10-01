@@ -1,21 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
 import { usePrevious } from "../Hooks/usePrevious";
 import Cookie from "js-cookie";
-import decode from "jwt-decode";
-
-const initUser = () => {
-  const cookie = Cookie.get("tarot.io");
-
-  if (cookie) {
-    const data = decode(cookie);
-    return data;
-  }
-};
 
 export const UserContext = createContext();
 
 export const UserProvider = props => {
-  const [user, updateUser] = useState(initUser);
+  const cookie = Cookie.get("tarot.io");
+  const [user, updateUser] = useState(cookie);
 
   const prevState = usePrevious(user);
 
