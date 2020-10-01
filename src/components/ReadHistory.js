@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../Contexts/UserContext";
 import { Link } from "react-router-dom";
 import Axios from "axios";
-import decode from "jwt-decode";
 import { format } from "date-fns";
 
 const ReadHistory = props => {
@@ -15,11 +14,10 @@ const ReadHistory = props => {
   });
 
   useEffect(() => {
-    const userData = decode(user);
-    const readings = JSON.parse(userData.archived);
-    if (userData && readings) {
+    const readings = JSON.parse(user.archived);
+    if (user && readings) {
       const params = {
-        user: userData.email,
+        user: user.email,
         readings,
       };
 
