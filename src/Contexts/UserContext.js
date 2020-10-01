@@ -10,8 +10,8 @@ export const UserProvider = props => {
 
   const prevState = usePrevious(user);
 
-  // console.log(`Previous cookie: ${JSON.stringify(prevState)}`);
-  // console.log(`Current cookie: ${JSON.stringify(user)}`);
+  console.log(`Previous cookie: ${JSON.stringify(prevState)}`);
+  console.log(`Current cookie: ${JSON.stringify(user)}`);
 
   useEffect(() => {
     if (user && !Cookie.get("tarot.io") || (prevState && user) && (user.deck !== prevState.deck)) {
