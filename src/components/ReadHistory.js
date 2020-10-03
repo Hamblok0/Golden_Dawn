@@ -21,7 +21,6 @@ const ReadHistory = props => {
         user: userData.email,
         readings: JSON.parse(userData.archived),
       };
-
       Axios.get(api, { params })
         .then((response) => {
           const data = {

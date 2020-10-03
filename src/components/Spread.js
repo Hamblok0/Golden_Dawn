@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import decode from "jwt-decode";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../Contexts/UserContext";
 import cardData from "../data/cardData.json";
 import defaultDeck from "../data/newDeck.json";
 import defaultCard from "../img/card.jpg";
@@ -14,13 +14,12 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 const Spread = props => {
   const endpoint = process.env.CARDS;
-  const fromPrevious = props.location.state;
+  const fromPrevious = props.location.state
+  const [user, updateUser] = useContext(UserContext);
 
   const getDeck = () => {
-    if (fromPrevious && fromPrevious.deck) {
-      return JSON.parse(fromPrevious.deck);
-    } else {
-      return null;
+    if (user) {
+      return JSON.parse(user.deck);
     }
   }
 
