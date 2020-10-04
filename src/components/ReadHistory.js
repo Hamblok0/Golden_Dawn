@@ -14,12 +14,10 @@ const ReadHistory = props => {
   });
 
   useEffect(() => {
-    const userData = JSON.parse(user);
-
-    if (userData && userData.archived) {
+    if (user && user.archived) {
       const params = {
-        user: userData.email,
-        readings: JSON.parse(userData.archived),
+        user: user.email,
+        readings: JSON.parse(user.archived),
       };
       Axios.get(api, { params })
         .then((response) => {

@@ -5,8 +5,8 @@ import defaultDeck from "../data/newDeck.json";
 import defaultCard from "../img/card.jpg";
 import ShortDescription from "./Modals/ShortDescription";
 import LongDescription from "./Modals/LongDescription";
-import ShuffleMain from "./Modals/ShuffleMain";
-import ShuffleDrop from "./Modals/ShuffleDrop";
+// import ShuffleMain from "./Modals/ShuffleMain";
+// import ShuffleDrop from "./Modals/ShuffleDrop";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons';
@@ -14,12 +14,14 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 const Spread = props => {
   const endpoint = process.env.CARDS;
-  const fromPrevious = props.location.state
+  const fromPrevious = props.location.state;
   const [user, updateUser] = useContext(UserContext);
 
   const getDeck = () => {
     if (user) {
       return JSON.parse(user.deck);
+    } else {
+      return defaultDeck;
     }
   }
 
@@ -71,11 +73,10 @@ const Spread = props => {
     }
   };
 
-  let modalInit ={
+  let modalInit = {
     data: {},
     shortDesc: false,
-    longDesc: false,
-    shuffleDrop: false
+    longDesc: false
   };
 
   const [deck, setDeck] = useState(getDeck());
@@ -95,18 +96,10 @@ const Spread = props => {
       {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} />}
       {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="utilBar">
-        {fromPrevious ? 
-          <>
-            {modals.shuffleDrop && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />}
-          </> :
-          <>
-            {modals.shuffleDrop && <ShuffleDrop setDeck={setDeck} shuffle={shuffle} deck={deck} />} 
-            <FontAwesomeIcon icon={faRedoAlt} onClick={() => setModals({...modals, shuffleDrop: !modals.shuffleDrop})} />
-            <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
-            <FontAwesomeIcon icon={faArchive} />
-            <FontAwesomeIcon icon={faQuestion} />
-          </>
-        }
+        <FontAwesomeIcon icon={faRedoAlt} onClick={() => setModals({...modals, shuffleDrop: !modals.shuffleDrop})} />
+        <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
+        <FontAwesomeIcon icon={faArchive} />
+        <FontAwesomeIcon icon={faQuestion} />
       </div>
       {setSpread()}
     </div>

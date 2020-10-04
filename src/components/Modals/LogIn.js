@@ -3,7 +3,7 @@ import { UserContext } from "../../Contexts/UserContext";
 import Axios from "axios";
 import decode from "jwt-decode";
 
-const LogIn = (props) => {
+const LogIn = props => {
   const api = process.env.BACKEND + "/user";
   const [user, setUser] = useContext(UserContext);
   const [type, setType] = useState("login");
