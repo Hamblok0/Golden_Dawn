@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import { format } from "date-fns";
 
-const ReadHistory = props => {
+const ReadHistory = () => {
   const endpoint = process.env.CARDS;
   const api = process.env.BACKEND + "/archives";
   const [user, setUser] = useContext(UserContext);

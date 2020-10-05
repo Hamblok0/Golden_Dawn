@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
+import Cookie from "js-cookie";
 import { UserContext } from "../Contexts/UserContext";
+import { usePrevious } from "../Hooks/usePrevious";
 import cardData from "../data/cardData.json";
 import defaultDeck from "../data/newDeck.json";
-import defaultCard from "../img/card.jpg";
 import ShortDescription from "./Modals/ShortDescription";
 import LongDescription from "./Modals/LongDescription";
 // import ShuffleMain from "./Modals/ShuffleMain";
@@ -13,20 +14,13 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 
 const Spread = props => {
-  const endpoint = process.env.CARDS;
-  const fromPrevious = props.location.state;
+  const deckInit = Cookie.get("tarot.io.deck") || defaultDeck;
   const [user, updateUser] = useContext(UserContext);
-
-  const getDeck = () => {
-    if (user) {
-      return JSON.parse(user.deck);
-    } else {
-      return defaultDeck;
-    }
-  }
-
+  const [deck, updateDeck] = useState(shuffle(deckInit));
+  const previous = usePrevious(deck);
+  
   const setSpread = () => {
-    return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
+    return <GoldenDawn toggleShort={toggleShort} deck={deck} />;
     // switch (fromPrevious.type) {
     //   case "Golden_Dawn":
     //     return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
@@ -35,17 +29,8 @@ const Spread = props => {
     // }
   }
 
-  const getCards = () => {
-    if (!deck) {
-      return new Array(15).fill(defaultCard);
-    } else {
-      return deck.slice(0, 15).map(card => {
-        return endpoint + card + ".png";
-      });
-    }
-  };
-
-  const shuffle = (deck, shuffles) => {
+  const shuffle = deck => {
+    const shuffles = Math.floor((Math.random() * 100) + 1);
     let newDeck = [...deck];
     for (let s = 0; s < shuffles; s++) {
       for (let i = newDeck.length - 1; i > 0; i--) {
@@ -79,25 +64,20 @@ const Spread = props => {
     longDesc: false
   };
 
-  const [deck, setDeck] = useState(getDeck());
-  const [imgs, setImgs] = useState(getCards());
   const [modals, setModals] = useState(modalInit);
 
   useEffect(() => {
-    if (deck) {
-      setImgs(getCards());
-      setModals(modalInit);
+    if (previous !== deck) {
+      Cookie.set("tarot.io.deck", deck);
     }
   }, [deck]);
-
+  
   return (
     <div className="spreadWrapper">
       {modals.shortDesc && <ShortDescription card={modals.data} toggleLong={toggleLong} />}
       {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} />}
-      {!deck && <ShuffleMain setDeck={setDeck} shuffle={shuffle} deck={defaultDeck} />}
       <div className="utilBar">
-        <FontAwesomeIcon icon={faRedoAlt} onClick={() => setModals({...modals, shuffleDrop: !modals.shuffleDrop})} />
-        <FontAwesomeIcon icon={faRandom} onClick={() => setDeck(shuffle(deck, Math.floor((Math.random() * 100) + 1)))} />
+        <FontAwesomeIcon icon={faRandom} onClick={() => updateDeck(shuffle(deck))} />
         <FontAwesomeIcon icon={faArchive} />
         <FontAwesomeIcon icon={faQuestion} />
       </div>
