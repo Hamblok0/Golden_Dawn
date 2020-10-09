@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Cookie from "js-cookie";
+import Axios from "axios";
 import { UserContext } from "../Contexts/UserContext";
 import { usePrevious } from "../Hooks/usePrevious";
 import cardData from "../data/cardData.json";
@@ -9,30 +10,35 @@ import LongDescription from "./Modals/LongDescription";
 // import ShuffleMain from "./Modals/ShuffleMain";
 // import ShuffleDrop from "./Modals/ShuffleDrop";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArchive,
+  faRedoAlt,
+  faQuestion,
+  faRandom,
+} from "@fortawesome/free-solid-svg-icons";
 
-
-const Spread = props => {
+const Spread = (props) => {
+  const api = process.env.BACKEND + "/archive";
   const cookie = Cookie.get("tarot.io.deck");
   const deckInit = cookie ? JSON.parse(cookie) : defaultDeck;
   const [user, updateUser] = useContext(UserContext);
   const previous = usePrevious(deck);
-  
-  console.log(`deckInit: ${deckInit}`);
-  
+
   const setSpread = () => {
-    return <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs}/>;
+    return (
+      <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs} />
+    );
     // switch (fromPrevious.type) {
     //   case "Golden_Dawn":
     //     return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
     //   default:
     //     return "An error occurred"
     // }
-  }
+  };
 
-  const shuffle = deck => {
-    const shuffles = Math.floor((Math.random() * 100) + 1);
+  const shuffle = (deck) => {
+    const shuffles = Math.floor(Math.random() * 100 + 1);
     let newDeck = [...deck];
     for (let s = 0; s < shuffles; s++) {
       for (let i = newDeck.length - 1; i > 0; i--) {
@@ -52,7 +58,7 @@ const Spread = props => {
     }
   };
 
-  const toggleLong = card => {
+  const toggleLong = (card) => {
     if (card) {
       setModals({ ...modals, shortDesc: false, longDesc: true });
     } else {
@@ -62,16 +68,53 @@ const Spread = props => {
 
   const getImgs = (deck, length) => {
     const endpoint = process.env.CARDS;
-    
-    return deck.slice(0, length).map(card => {
+
+    return deck.slice(0, length).map((card) => {
       return endpoint + card + ".png";
+    });
+  };
+
+  const saveReading = (deck) => {
+    const data = {
+      email: user.email,
+      deck,
+    };
+    Axios.put(api, data, { headers: { "Content-Type": "application/json" } })
+      .then((response) => {
+        // updateUser({
+        //   ...user,
+        //   archived: JSON.stringify(JSON.parse(user.archived).push(response.data)),
+        // })
+        console.log(JSON.stringify(response));
+      })
+      .catch((err) => {
+        console.log(JSON.stringify(err));
+      });
+  };
+
+  const deleteReading = (reading) => {
+    const data = {
+      email: user.email,
+      reading,
+    };
+    Axios.delete(api, data, {
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      updateUser({
+        ...user,
+        archived: JSON.parse(user.archived).filter((i) => {
+          i !== reading;
+        }),
+      }).catch((err) => {
+        console.log(JSON.stringify(err));
+      });
     });
   };
 
   let modalInit = {
     data: {},
     shortDesc: false,
-    longDesc: false
+    longDesc: false,
   };
 
   const [modals, setModals] = useState(modalInit);
@@ -82,14 +125,21 @@ const Spread = props => {
       Cookie.set("tarot.io.deck", deck);
     }
   }, [deck]);
-  
+
   return (
     <div className="spreadWrapper">
-      {modals.shortDesc && <ShortDescription card={modals.data} toggleLong={toggleLong} />}
-      {modals.longDesc && <LongDescription card={modals.data} toggleLong={toggleLong} />}
+      {modals.shortDesc && (
+        <ShortDescription card={modals.data} toggleLong={toggleLong} />
+      )}
+      {modals.longDesc && (
+        <LongDescription card={modals.data} toggleLong={toggleLong} />
+      )}
       <div className="utilBar">
-        <FontAwesomeIcon icon={faRandom} onClick={() => updateDeck(shuffle(deck))} />
-        <FontAwesomeIcon icon={faArchive} />
+        <FontAwesomeIcon
+          icon={faRandom}
+          onClick={() => updateDeck(shuffle(deck))}
+        />
+        <FontAwesomeIcon icon={faArchive} onClick={() => saveReading(deck)}/>
         <FontAwesomeIcon icon={faQuestion} />
       </div>
       {setSpread()}
