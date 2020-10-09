@@ -24,7 +24,6 @@ const Spread = (props) => {
   const deckInit = cookie ? JSON.parse(cookie) : defaultDeck;
   const [user, updateUser] = useContext(UserContext);
   const previous = usePrevious(deck);
-
   const setSpread = () => {
     return (
       <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs} />
@@ -76,7 +75,7 @@ const Spread = (props) => {
 
   const saveReading = (deck) => {
     const data = {
-      user: user.email,
+      user: JSON.parse(user).email,
       deck,
     };
     Axios.put(api, data, { headers: { "Content-Type": "application/json" } })
