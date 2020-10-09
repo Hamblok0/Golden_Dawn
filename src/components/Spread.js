@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Spread = (props) => {
-  const api = process.env.BACKEND + "/archive";
+  const api = process.env.BACKEND + "/archives";
   const cookie = Cookie.get("tarot.io.deck");
   const deckInit = cookie ? JSON.parse(cookie) : defaultDeck;
   const [user, updateUser] = useContext(UserContext);
