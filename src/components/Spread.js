@@ -76,7 +76,7 @@ const Spread = (props) => {
 
   const saveReading = (deck) => {
     const data = {
-      email: user.email,
+      user: user.email,
       deck,
     };
     Axios.put(api, data, { headers: { "Content-Type": "application/json" } })
