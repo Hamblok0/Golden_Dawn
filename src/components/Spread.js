@@ -14,13 +14,15 @@ import { faArchive, faRedoAlt, faQuestion, faRandom } from '@fortawesome/free-so
 
 
 const Spread = props => {
-  const deckInit = Cookie.get("tarot.io.deck") || defaultDeck;
+  const cookie = Cookie.get("tarot.io.deck");
+  const deckInit = cookie ? JSON.parse(cookie) : defaultDeck;
   const [user, updateUser] = useContext(UserContext);
-  const [deck, updateDeck] = useState(shuffle(deckInit));
   const previous = usePrevious(deck);
   
+  console.log(`deckInit: ${deckInit}`);
+  
   const setSpread = () => {
-    return <GoldenDawn toggleShort={toggleShort} deck={deck} />;
+    return <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs}/>;
     // switch (fromPrevious.type) {
     //   case "Golden_Dawn":
     //     return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
@@ -58,6 +60,14 @@ const Spread = props => {
     }
   };
 
+  const getImgs = (deck, length) => {
+    const endpoint = process.env.CARDS;
+    
+    return deck.slice(0, length).map(card => {
+      return endpoint + card + ".png";
+    });
+  };
+
   let modalInit = {
     data: {},
     shortDesc: false,
@@ -65,6 +75,7 @@ const Spread = props => {
   };
 
   const [modals, setModals] = useState(modalInit);
+  const [deck, updateDeck] = useState(shuffle(deckInit));
 
   useEffect(() => {
     if (previous !== deck) {

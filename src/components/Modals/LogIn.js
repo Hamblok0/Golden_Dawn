@@ -17,25 +17,25 @@ const LogIn = props => {
     password: "",
   });
 
-  const createUser = (e) => {
+  const createUser = e => {
     Axios.put(api, signUp, { headers: { "Content-Type": "application/json" } })
-      .then((response) => {
+      .then(response => {
         setUser(decode(response.data));
         props.toggleLogIn(false);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
     e.preventDefault();
   };
 
-  const signIn = (e) => {
+  const signIn = e => {
     Axios.post(api, logIn, { headers: { "Content-Type": "application/json" } })
-      .then((response) => {
+      .then(response => {
         setUser(decode(response.data));
         props.toggleLogIn(false);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(JSON.stringify(err));
       });
     e.preventDefault();
