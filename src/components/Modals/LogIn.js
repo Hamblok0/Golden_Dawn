@@ -20,7 +20,8 @@ const LogIn = props => {
   const createUser = e => {
     Axios.put(api, signUp, { headers: { "Content-Type": "application/json" } })
       .then(response => {
-        setUser(decode(response.data));
+        const user = decode(response.data);
+        setUser(user);
         props.toggleLogIn(false);
       })
       .catch(err => {
@@ -32,7 +33,8 @@ const LogIn = props => {
   const signIn = e => {
     Axios.post(api, logIn, { headers: { "Content-Type": "application/json" } })
       .then(response => {
-        setUser(decode(response.data));
+        const user = decode(response.data);
+        setUser(user);
         props.toggleLogIn(false);
       })
       .catch(err => {

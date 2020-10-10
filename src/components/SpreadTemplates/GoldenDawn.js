@@ -2,8 +2,6 @@ import React from "react";
 
 const GoldenDawn = props => {
   const imgs = props.getImgs(props.deck, 15);
-  console.log(`Deck: ${props.deck}`);
-  console.log(`Img: ${JSON.stringify(imgs)}`);
 
   return (
     <div className="spread">

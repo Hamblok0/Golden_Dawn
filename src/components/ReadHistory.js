@@ -12,7 +12,24 @@ const ReadHistory = () => {
     loading: true,
     readings: [],
   });
-
+  const deleteReading = (reading) => {
+    const data = {
+      email: user.email,
+      reading,
+    };
+    Axios.delete(api, data, {
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      updateUser({
+        ...user,
+        archived: JSON.stringify(JSON.parse(user.archived).filter((i) => {
+          i !== reading;
+        })),
+      }).catch((err) => {
+        console.log(JSON.stringify(err));
+      });
+    });
+  };
   useEffect(() => {
     if (user && user.archived) {
       const params = {

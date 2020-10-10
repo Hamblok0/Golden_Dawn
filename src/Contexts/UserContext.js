@@ -5,10 +5,7 @@ export const UserContext = createContext();
 
 export const UserProvider = props => {
   const cookie = Cookie.get("tarot.io");
-  const [user, updateUser] = useState(cookie);
-
-  // console.log(`Previous cookie: ${JSON.stringify(prevState)}`);
-  // console.log(`Current cookie: ${JSON.stringify(user)}`);
+  const [user, updateUser] = useState(cookie ? JSON.parse(cookie) : undefined);
 
   useEffect(() => {
     if (user&& !Cookie.get("tarot.io")) {

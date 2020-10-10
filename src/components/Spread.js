@@ -75,39 +75,19 @@ const Spread = (props) => {
 
   const saveReading = (deck) => {
     const data = {
-      user: JSON.parse(user).email,
+      user: user.email,
       deck,
     };
     Axios.put(api, data, { headers: { "Content-Type": "application/json" } })
       .then((response) => {
-        // updateUser({
-        //   ...user,
-        //   archived: JSON.stringify(JSON.parse(user.archived).push(response.data)),
-        // })
-        console.log(JSON.stringify(response));
+        updateUser({
+          ...user,
+          archived: JSON.stringify(JSON.parse(user.archived).push(response.data.archive)),
+        })
       })
       .catch((err) => {
         console.log(JSON.stringify(err));
       });
-  };
-
-  const deleteReading = (reading) => {
-    const data = {
-      email: user.email,
-      reading,
-    };
-    Axios.delete(api, data, {
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      updateUser({
-        ...user,
-        archived: JSON.parse(user.archived).filter((i) => {
-          i !== reading;
-        }),
-      }).catch((err) => {
-        console.log(JSON.stringify(err));
-      });
-    });
   };
 
   let modalInit = {
