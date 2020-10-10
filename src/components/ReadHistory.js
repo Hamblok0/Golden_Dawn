@@ -3,15 +3,18 @@ import { UserContext } from "../Contexts/UserContext";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { format } from "date-fns";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ReadHistory = () => {
   const endpoint = process.env.CARDS;
   const api = process.env.BACKEND + "/archives";
   const [user, setUser] = useContext(UserContext);
+
   const [archives, updateArchive] = useState({
     loading: true,
     readings: [],
   });
+
   const deleteReading = (reading) => {
     const data = {
       email: user.email,
@@ -22,14 +25,17 @@ const ReadHistory = () => {
     }).then((response) => {
       updateUser({
         ...user,
-        archived: JSON.stringify(JSON.parse(user.archived).filter((i) => {
-          i !== reading;
-        })),
+        archived: JSON.stringify(
+          JSON.parse(user.archived).filter((i) => {
+            i !== reading;
+          })
+        ),
       }).catch((err) => {
         console.log(JSON.stringify(err));
       });
     });
   };
+
   useEffect(() => {
     if (user && user.archived) {
       const params = {
@@ -65,6 +71,7 @@ const ReadHistory = () => {
         <div className="histories">
           {archives.readings.map((reading) => (
             <div className="history" key={reading.id}>
+              <FontAwesomeIcon icon={faTrashAlt} onClick={() => deleteReading(reading.id)} />
               <div className="previewWrapper">
                 <Link
                   to={{

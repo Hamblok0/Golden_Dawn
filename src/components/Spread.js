@@ -13,7 +13,6 @@ import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArchive,
-  faRedoAlt,
   faQuestion,
   faRandom,
 } from "@fortawesome/free-solid-svg-icons";
@@ -82,8 +81,10 @@ const Spread = (props) => {
       .then((response) => {
         updateUser({
           ...user,
-          archived: JSON.stringify(JSON.parse(user.archived).push(response.data.archive)),
-        })
+          archived: JSON.stringify(
+            JSON.parse(user.archived).push(response.data.archive)
+          ),
+        });
       })
       .catch((err) => {
         console.log(JSON.stringify(err));
@@ -118,7 +119,7 @@ const Spread = (props) => {
           icon={faRandom}
           onClick={() => updateDeck(shuffle(deck))}
         />
-        <FontAwesomeIcon icon={faArchive} onClick={() => saveReading(deck)}/>
+        <FontAwesomeIcon icon={faArchive} onClick={() => saveReading(deck)} />
         <FontAwesomeIcon icon={faQuestion} />
       </div>
       {setSpread()}
