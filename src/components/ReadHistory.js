@@ -3,12 +3,13 @@ import { UserContext } from "../Contexts/UserContext";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { format } from "date-fns";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ReadHistory = () => {
   const endpoint = process.env.CARDS;
   const api = process.env.BACKEND + "/archives";
-  const [user, setUser] = useContext(UserContext);
+  const [user, updateUser] = useContext(UserContext);
 
   const [archives, updateArchive] = useState({
     loading: true,
@@ -16,23 +17,23 @@ const ReadHistory = () => {
   });
 
   const deleteReading = (reading) => {
-    const data = {
-      email: user.email,
-      reading,
-    };
-    Axios.delete(api, data, {
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      updateUser({
+    Axios.delete(
+      api,
+      { data: { email: user.email, reading } },
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    ).then((response) => {
+      const newState = {
         ...user,
-        archived: JSON.stringify(
-          JSON.parse(user.archived).filter((i) => {
-            i !== reading;
-          })
-        ),
-      }).catch((err) => {
-        console.log(JSON.stringify(err));
-      });
+        archived: JSON.parse(user.archived).filter((i) => {
+          return i !== reading;
+        })
+      };
+      updateUser(newState);
+    })
+    .catch((err) => {
+      console.log(JSON.stringify(err));
     });
   };
 
@@ -62,7 +63,7 @@ const ReadHistory = () => {
           console.log(`AXIOS ERR: ${err}`);
         });
     }
-  }, []);
+  }, [user]);
 
   return (
     <div className="historyWrapper">
@@ -71,7 +72,10 @@ const ReadHistory = () => {
         <div className="histories">
           {archives.readings.map((reading) => (
             <div className="history" key={reading.id}>
-              <FontAwesomeIcon icon={faTrashAlt} onClick={() => deleteReading(reading.id)} />
+              <FontAwesomeIcon
+                icon={faTrashAlt}
+                onClick={() => deleteReading(reading.id)}
+              />
               <div className="previewWrapper">
                 <Link
                   to={{
