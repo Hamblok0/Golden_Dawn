@@ -26,9 +26,9 @@ const ReadHistory = () => {
     ).then((response) => {
       const newState = {
         ...user,
-        archived: JSON.parse(user.archived).filter((i) => {
+        archived: JSON.stringify(JSON.parse(user.archived).filter((i) => {
           return i !== reading;
-        })
+        }))
       };
       updateUser(newState);
     })
