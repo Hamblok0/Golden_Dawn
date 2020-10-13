@@ -22,26 +22,11 @@ const Spread = (props) => {
   const cookie = Cookie.get("tarot.io.deck");
   const fromPrevious = props.location.state;
   const [user, updateUser] = useContext(UserContext);
-  const [session, updateSession] = useState(() => {
-    if (fromPrevious) {
-      return {
-        deck: fromPrevious,
-        spread: "Golden_Dawn",
-        archived: true,
-      };
-    }
-    return {
-      deck: cookie ? JSON.parse(cookie) : defaultDeck,
-      spread: "Golden_Dawn",
-      archived: false,
-    };
-  });
   const [modals, setModals] = useState({
     data: {},
     shortDesc: false,
     longDesc: false,
   });
-  const previousDeck = usePrevious(session.deck);
 
   const getImgs = (deck, length) => {
     const endpoint = process.env.CARDS;
@@ -55,7 +40,11 @@ const Spread = (props) => {
     switch (session.spread) {
       case "Golden_Dawn":
         return (
-          <GoldenDawn toggleShort={toggleShort} deck={session.deck} getImgs={getImgs} />
+          <GoldenDawn
+            toggleShort={toggleShort}
+            deck={session.deck}
+            getImgs={getImgs}
+          />
         );
       default:
         return "An error occurred";
@@ -110,6 +99,22 @@ const Spread = (props) => {
         console.log(JSON.stringify(err));
       });
   };
+  const [session, updateSession] = useState(() => {
+    if (fromPrevious) {
+      return {
+        deck: fromPrevious,
+        spread: "Golden_Dawn",
+        archived: true,
+      };
+    }
+    return {
+      deck: shuffle(cookie ? JSON.parse(cookie) : defaultDeck),
+      spread: "Golden_Dawn",
+      archived: false,
+    };
+  });
+
+  const previousDeck = usePrevious(session.deck);
 
   useEffect(() => {
     if (previousDeck !== session.deck) {
@@ -126,14 +131,14 @@ const Spread = (props) => {
         <LongDescription card={modals.data} toggleLong={toggleLong} />
       )}
       <div className="utilBar">
-        {fromPrevious ? 
+        {session.archived ? (
           <FontAwesomeIcon
             icon={faTrashAlt}
             onClick={() =>
               updateSession({ ...session, deck: shuffle(session.deck) })
             }
           />
-          :
+        ) : (
           <>
             <FontAwesomeIcon
               icon={faRandom}
@@ -146,7 +151,7 @@ const Spread = (props) => {
               onClick={() => saveReading(session.deck)}
             />
           </>
-        }
+        )}
       </div>
       {setSpread()}
     </div>
