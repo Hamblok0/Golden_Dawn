@@ -10,7 +10,7 @@ export const UserProvider = props => {
   const previous = usePrevious(user);
 
   useEffect(() => {
-    if (user && !Cookie.get("tarot.io" || user && user !== previous)) {
+    if (user && !Cookie.get("tarot.io") || user && user !== previous) {
       Cookie.set("tarot.io", user);
     }
     if (!user && Cookie.get("tarot.io")) {
