@@ -28,27 +28,38 @@ const Spread = (props) => {
         deck: fromPrevious,
         spread: "Golden_Dawn",
         archived: true,
-      }
+      };
     }
-
     return {
       deck: cookie ? JSON.parse(cookie) : defaultDeck,
       spread: "Golden_Dawn",
       archived: false,
-    }
+    };
   });
+  const [modals, setModals] = useState({
+    data: {},
+    shortDesc: false,
+    longDesc: false,
+  });
+  const previousDeck = usePrevious(session.deck);
 
-  const previousDeck = usePrevious(deck);
+  const getImgs = (deck, length) => {
+    const endpoint = process.env.CARDS;
+
+    return deck.slice(0, length).map((card) => {
+      return endpoint + card + ".png";
+    });
+  };
+
   const setSpread = () => {
-    return (
-      <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs} />
-    );
-    // switch (fromPrevious.type) {
-    //   case "Golden_Dawn":
-    //     return <GoldenDawn toggleShort={toggleShort} deck={deck} imgs={imgs} />;
-    //   default:
-    //     return "An error occurred"
-    // }
+    switch (session.spread) {
+      case "Golden_Dawn":
+        return (
+          <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs} />
+        );
+      default:
+        return "An error occurred";
+    }
   };
 
   const shuffle = (deck) => {
@@ -80,14 +91,6 @@ const Spread = (props) => {
     }
   };
 
-  const getImgs = (deck, length) => {
-    const endpoint = process.env.CARDS;
-
-    return deck.slice(0, length).map((card) => {
-      return endpoint + card + ".png";
-    });
-  };
-
   const saveReading = (deck) => {
     const data = {
       user: user.email,
@@ -107,20 +110,11 @@ const Spread = (props) => {
       });
   };
 
-  let modalInit = {
-    data: {},
-    shortDesc: false,
-    longDesc: false,
-  };
-
-  const [modals, setModals] = useState(modalInit);
-  const [deck, updateDeck] = useState(shuffle(deckInit));
-
   useEffect(() => {
-    if (previousDeck !== deck) {
-      Cookie.set("tarot.io.deck", deck);
+    if (previousDeck !== session.deck) {
+      Cookie.set("tarot.io.deck", session.deck);
     }
-  }, [deck]);
+  }, [session.deck]);
 
   return (
     <div className="spreadWrapper">
@@ -133,9 +127,14 @@ const Spread = (props) => {
       <div className="utilBar">
         <FontAwesomeIcon
           icon={faRandom}
-          onClick={() => updateDeck(shuffle(deck))}
+          onClick={() =>
+            updateSession({ ...session, deck: shuffle(session.deck) })
+          }
         />
-        <FontAwesomeIcon icon={faArchive} onClick={() => saveReading(deck)} />
+        <FontAwesomeIcon
+          icon={faArchive}
+          onClick={() => saveReading(session.deck)}
+        />
         <FontAwesomeIcon icon={faQuestion} />
       </div>
       {setSpread()}
