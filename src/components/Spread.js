@@ -13,8 +13,8 @@ import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArchive,
-  faQuestion,
   faRandom,
+  faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Spread = (props) => {
@@ -55,7 +55,7 @@ const Spread = (props) => {
     switch (session.spread) {
       case "Golden_Dawn":
         return (
-          <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs} />
+          <GoldenDawn toggleShort={toggleShort} deck={session.deck} getImgs={getImgs} />
         );
       default:
         return "An error occurred";
@@ -96,6 +96,7 @@ const Spread = (props) => {
       user: user.email,
       deck,
     };
+
     Axios.put(api, data, { headers: { "Content-Type": "application/json" } })
       .then((response) => {
         updateUser({
@@ -125,17 +126,27 @@ const Spread = (props) => {
         <LongDescription card={modals.data} toggleLong={toggleLong} />
       )}
       <div className="utilBar">
-        <FontAwesomeIcon
-          icon={faRandom}
-          onClick={() =>
-            updateSession({ ...session, deck: shuffle(session.deck) })
-          }
-        />
-        <FontAwesomeIcon
-          icon={faArchive}
-          onClick={() => saveReading(session.deck)}
-        />
-        <FontAwesomeIcon icon={faQuestion} />
+        {fromPrevious ? 
+          <FontAwesomeIcon
+            icon={faTrashAlt}
+            onClick={() =>
+              updateSession({ ...session, deck: shuffle(session.deck) })
+            }
+          />
+          :
+          <>
+            <FontAwesomeIcon
+              icon={faRandom}
+              onClick={() =>
+                updateSession({ ...session, deck: shuffle(session.deck) })
+              }
+            />
+            <FontAwesomeIcon
+              icon={faArchive}
+              onClick={() => saveReading(session.deck)}
+            />
+          </>
+        }
       </div>
       {setSpread()}
     </div>
