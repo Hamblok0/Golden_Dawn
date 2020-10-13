@@ -20,9 +20,25 @@ import {
 const Spread = (props) => {
   const api = process.env.BACKEND + "/archives";
   const cookie = Cookie.get("tarot.io.deck");
-  const deckInit = cookie ? JSON.parse(cookie) : defaultDeck;
+  const fromPrevious = props.location.state;
   const [user, updateUser] = useContext(UserContext);
-  const previous = usePrevious(deck);
+  const [session, updateSession] = useState(() => {
+    if (fromPrevious) {
+      return {
+        deck: fromPrevious,
+        spread: "Golden_Dawn",
+        archived: true,
+      }
+    }
+
+    return {
+      deck: cookie ? JSON.parse(cookie) : defaultDeck,
+      spread: "Golden_Dawn",
+      archived: false,
+    }
+  });
+
+  const previousDeck = usePrevious(deck);
   const setSpread = () => {
     return (
       <GoldenDawn toggleShort={toggleShort} deck={deck} getImgs={getImgs} />
@@ -101,7 +117,7 @@ const Spread = (props) => {
   const [deck, updateDeck] = useState(shuffle(deckInit));
 
   useEffect(() => {
-    if (previous !== deck) {
+    if (previousDeck !== deck) {
       Cookie.set("tarot.io.deck", deck);
     }
   }, [deck]);
