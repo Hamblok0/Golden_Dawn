@@ -2,7 +2,6 @@ import React from "react";
 
 const GoldenDawn = props => {
   const imgs = props.getImgs(props.deck, 15);
-
   return (
     <div className="spread">
       <div className="row1">
