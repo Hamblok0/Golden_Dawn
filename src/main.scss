@@ -1,13 +1,17 @@
-$paleGold: #d5ccad;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+$mainBackground: #CABFAB;
+$modal: #DFD8C8;
 $silk: #dcd0c0;
-$paper: #f4f4f4;
+$paper: #DBD8E3;
 $charcoal: #373737;
+$lightChar: #52575D;
 $opacity: 0.77;
 $goldShadow: #b7af94;
 
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Fira Code', monospace;
 }
 
 html {
@@ -15,9 +19,17 @@ html {
 }
 
 body {
-  background-color: $paleGold;
+  background-color: $mainBackground;
+  height: 100%;
 }
 
+#root {
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+}
 /* HEADER */
 
 header {
@@ -26,7 +38,6 @@ header {
   justify-content: space-between;
   grid-template-columns: 1fr 3fr 1fr;
   height: 73px;
-  opacity: $opacity;
   color: $paper;
 
   a {
@@ -71,20 +82,61 @@ header {
 
 /* HOME */
 
-@mixin homeNav() {
+.homeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loginBody {
   display: flex;
   flex-direction: column;
-  color: $charcoal;
+  align-self: center;
+  background-color: $charcoal;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+  width: 75vw;
+  height: 50vh;
+  padding: 30px;
+  border-radius: 12px;
+  color: $paper;
   text-align: center;
-  img {
-    margin-top: 1.5em;
-    width: 200px;
-    height: 200px;
+
+  button {
+    background-color: $lightChar;
+    color: $paper;
+    border-radius: 3px;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
   }
-  h3 {
-    margin-top: 2.3em;
-    font-size: 1.5em;
+
+  form {
+    margin: 30px 0 50px 30px;
+    display: flex;
+    flex-direction: column;
   }
+
+  input {
+    margin-bottom: 20px;
+    width: 70%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $paper;
+    color: $paper;
+  }
+}
+
+.loginTitle {
+  width: 100%;
+  text-align: center;
+}
+
+.loginChange {
+  width: 100%;
+  text-align: right;
+  float: bottom;
 }
 
 /* SPREAD */
@@ -92,7 +144,7 @@ header {
 @mixin spreadTriads() {
   display: flex;
   flex-direction: column;
-  background-color: $paleGold;
+  background-color: $mainBackground;
   color: $charcoal;
   align-items: center;
   justify-content: center;
@@ -392,70 +444,6 @@ header {
     margin-top: 20px;
     font-size: 20px;
   }
-}
-
-/* LOG IN MODAL */
-
-.loginWrapper::before {
-  background: inherit;
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.9);
-  filter: blur(10px);
-}
-
-.loginWrapper {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.loginBody {
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 500px;
-  padding: 30px;
-  border-radius: 3px;
-  color: $paper;
-  form {
-    margin: 30px 0 50px 30px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  input {
-    margin-bottom: 20px;
-    width: 70%;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid $paper;
-    color: $paper;
-  }
-}
-
-.loginTitle {
-  width: 100%;
-  text-align: center;
-}
-
-.loginChange {
-  width: 100%;
-  text-align: right;
-  float: bottom;
 }
 
 /* USER DROP MODAL */

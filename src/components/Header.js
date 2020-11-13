@@ -1,7 +1,6 @@
 import React, { useState, useContext} from "react";
 import { UserContext } from "../Contexts/UserContext";
 import { Link } from "react-router-dom";
-import LogIn from "./Modals/LogIn";
 import UserDrop from "./Modals/UserDrop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
