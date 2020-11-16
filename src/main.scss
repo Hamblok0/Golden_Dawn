@@ -3,7 +3,7 @@ $mainBackground: #CABFAB;
 $modal: #DFD8C8;
 $silk: #dcd0c0;
 $paper: #DBD8E3;
-$charcoal: #373737;
+$charcoal: #41444B;
 $lightChar: #52575D;
 $opacity: 0.77;
 $goldShadow: #b7af94;
@@ -37,9 +37,11 @@ header {
   display: flex;
   justify-content: space-between;
   grid-template-columns: 1fr 3fr 1fr;
-  height: 73px;
+  height: 64px;
   color: $paper;
-
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   a {
     color: $paper;
     text-decoration: none;
@@ -95,7 +97,7 @@ header {
   align-self: center;
   background-color: $charcoal;
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
-  width: 75vw;
+  width: 50vh;
   height: 50vh;
   padding: 30px;
   border-radius: 12px;
@@ -105,8 +107,14 @@ header {
   button {
     background-color: $lightChar;
     color: $paper;
+    border: none;
     border-radius: 3px;
     box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    font-size: 17px;
+    padding: 20px 27px;
+    margin: 20px 15px 0 15px;
+    width: 138px;
+    border-radius: 3px;
   }
 
   form {
@@ -125,6 +133,20 @@ header {
     border-right: none;
     border-bottom: 1px solid $paper;
     color: $paper;
+  }
+}
+
+.introText {
+  margin: 15px 0 30px;
+  padding: 0 20px 0 20px;
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 17px;
+    margin-top: 30px;
   }
 }
 
@@ -575,3 +597,6 @@ header {
   border-right: 30px solid transparent;
   border-bottom: 30px solid $silk;
 }
+
+
+

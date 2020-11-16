@@ -7,10 +7,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [user] = useContext(UserContext);
-  const [logInToggle, toggleLogIn] = useState(false);
   const [userDrop, toggleUserDrop] = useState(false);
-
-  return (
+  
+  if (user) {
+   return (
     <header>
       <div className="title">
         <Link to='/'>
@@ -27,10 +27,12 @@ const Header = () => {
         {user ? (<FontAwesomeIcon icon={faBars} onClick={() => toggleUserDrop(!userDrop)}> </FontAwesomeIcon>) : 
         (<h1 onClick={() => toggleLogIn(true)}>Log In/Register</h1>)}
       </div>
-      {logInToggle && <LogIn toggleLogIn={toggleLogIn} />}
       {userDrop && <UserDrop toggleDrop={toggleUserDrop} />}
     </header>
   );
+  } else {
+    return null
+  }
 };
 
 export default Header;

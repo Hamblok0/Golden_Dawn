@@ -53,10 +53,12 @@ const Home = () => {
             <p>Making an account is absolutely not necessary for readings but recommended if you would like to archive and label your past readings.</p>
             <p>Enjoy!</p>
           </div>
-          <button>Continue as Guest</button>
+	  <div>
+            <button>Continue as Guest</button>
+	  </div>
           <div className="introAccButtons"> 
-            <button>Log In</button>
-            <button>Sign Up</button>
+            <button onClick={() => setType("login")}>Log In</button>
+            <button onClick={() => setType("register")}>Sign Up</button>
           </div>
         </div>
       )}
@@ -75,7 +77,7 @@ const Home = () => {
                 onChange={(e) =>
                   updateLogin({ ...logIn, email: e.target.value })
                 }
-              />
+	      />
               <h2>Password:</h2>
               <input
                 type="text"
