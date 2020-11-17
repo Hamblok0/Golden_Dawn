@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../Contexts/UserContext";
 import Axios from "axios";
 import decode from "jwt-decode";
 
 const Home = () => {
+  const history = useHistory();
   const api = process.env.BACKEND + "/user";
   const [user, setUser] = useContext(UserContext);
   const [type, setType] = useState("intro");
@@ -17,46 +19,56 @@ const Home = () => {
     password: "",
   });
 
-  const createUser = e => {
+  const createUser = (e) => {
     Axios.put(api, signUp, { headers: { "Content-Type": "application/json" } })
-      .then(response => {
+      .then((response) => {
         const user = decode(response.data);
         setUser(user);
         props.toggleLogIn(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
     e.preventDefault();
   };
 
-  const signIn = e => {
+  const signIn = (e) => {
     Axios.post(api, logIn, { headers: { "Content-Type": "application/json" } })
-      .then(response => {
+      .then((response) => {
         const user = decode(response.data);
         setUser(user);
         props.toggleLogIn(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(JSON.stringify(err));
       });
     e.preventDefault();
   };
 
+  if (user) {
+    history.push("/reading");
+  }
   return (
     <div className="homeWrapper">
       {type === "intro" && (
         <div className="loginBody">
           <div className="introText">
             <h1>Welcome to Tarot.io</h1>
-            <p>This is an early version of this app, meaning that it’ll continue to be updated with more features in the future.</p>
-            <p>Making an account is absolutely not necessary for readings but recommended if you would like to archive and label your past readings.</p>
+            <p>
+              This is an early version of this app, meaning that it’ll continue
+              to be updated with more features in the future.
+            </p>
+            <p>
+              Making an account is absolutely not necessary for readings but
+              recommended if you would like to archive and label your past
+              readings.
+            </p>
             <p>Enjoy!</p>
           </div>
-	  <div>
+          <div>
             <button>Continue as Guest</button>
-	  </div>
-          <div className="introAccButtons"> 
+          </div>
+          <div className="introAccButtons">
             <button onClick={() => setType("login")}>Log In</button>
             <button onClick={() => setType("register")}>Sign Up</button>
           </div>
@@ -77,7 +89,7 @@ const Home = () => {
                 onChange={(e) =>
                   updateLogin({ ...logIn, email: e.target.value })
                 }
-	      />
+              />
               <h2>Password:</h2>
               <input
                 type="text"
@@ -87,11 +99,13 @@ const Home = () => {
                   updateLogin({ ...logIn, password: e.target.value })
                 }
               />
-              <button type="submit">Submit</button>
+              <div className="formBottom">
+                <button type="submit">Submit</button>
+                <p onClick={() => setType("register")}>
+                  Don't have an account?
+                </p>
+              </div>
             </form>
-            <div className="loginChange">
-              <p onClick={() => setType("register")}>Don't have an account?</p>
-            </div>
           </div>
         </div>
       )}
@@ -128,11 +142,11 @@ const Home = () => {
                 updateSignUp({ ...signUp, password: e.target.value })
               }
             />
-            <button type="submit">Submit</button>
+            <div className="formBottom">
+              <button type="submit">Submit</button>
+              <p onClick={() => setType("register")}>Don't have an account?</p>
+            </div>
           </form>
-          <div className="loginChange">
-            <p onClick={() => setType("login")}>Already have an account?</p>
-          </div>
         </div>
       )}
     </div>
