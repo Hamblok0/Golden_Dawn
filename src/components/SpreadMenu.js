@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../Contexts/UserContext";
-import cardSvg from "./card-edit/svg";
+import cardSvg from "../img/card-edit.svg";
 
 const SpreadMenu = () => {
   const [user, updateUser] = useContext(UserContext);
