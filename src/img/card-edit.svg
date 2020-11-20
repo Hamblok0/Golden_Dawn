@@ -50,5 +50,6 @@
   <path
      d="m 6,5 v 22 c 0,1.656854 1.343146,3 3,3 h 14 c 1.656854,0 3,-1.343146 3,-3 V 5 C 26,3.343146 24.656854,2 23,2 H 9 C 7.343146,2 6,3.343146 6,5 Z M 23,4 c -15.333333,18.666667 -7.666667,9.333333 0,0 z"
      id="path4926"
-     sodipodi:nodetypes="ssssssssscc" />
+     sodipodi:nodetypes="ssssssssscc" 
+     fill="#41444b" />
 </svg>
