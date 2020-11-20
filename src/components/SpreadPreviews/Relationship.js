@@ -11,6 +11,8 @@ const RelationshipPreview = (props) => {
         </div>
         <div className="row2">
           <img src={props.card} />
+          <img src={props.card} />
+          <img src={props.card} />
         </div>
         <div className="row1">
           <img src={props.card} />

@@ -183,16 +183,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   height: 100%;
+}
+
+.spreadSelect {
+  display: flex;
+  flex-direction: row;
 }
 
 .spreadCard {
   text-align: center;
   background-color: $modal;
   width: 275px;
+  height: 470px;
   border-radius: 12px;
   padding: 30px;
+  margin: 25px;
   img {
     fill: $charcoal;
     height: 60.2px;
@@ -218,6 +224,31 @@ header {
  .row2 {
    text-align: center;
  }
+}
+
+.spreadPreviewRel {
+  .row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    div {
+      width: 43px;
+    }
+  }
+  .row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.spreadPreviewPPF {
+  .row1 {
+    div {
+      height: 60px;
+      width: 43px;
+    }
+  }
 }
 
 /* SPREAD */
