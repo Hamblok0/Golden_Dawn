@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import Cookie from "js-cookie";
 import Axios from "axios";
 import { UserContext } from "../Contexts/UserContext";
@@ -13,14 +14,14 @@ import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArchive,
-  faRandom,
-  faTrashAlt,
+  faRandom
 } from "@fortawesome/free-solid-svg-icons";
 
 const Spread = (props) => {
   const api = process.env.BACKEND + "/archives";
   const cookie = Cookie.get("tarot.io.deck");
   const fromPrevious = props.location.state;
+  const { id } = useParams();
   const [user, updateUser] = useContext(UserContext);
   const [modals, setModals] = useState({
     data: {},
@@ -103,13 +104,13 @@ const Spread = (props) => {
     if (fromPrevious) {
       return {
         deck: JSON.parse(fromPrevious.deck),
-        spread: "Golden_Dawn",
+        spread: fromPrevious.spread,
         archived: true,
       };
     }
     return {
       deck: shuffle(cookie ? JSON.parse(cookie) : defaultDeck),
-      spread: "Golden_Dawn",
+      spread: id,
       archived: false,
     };
   });
