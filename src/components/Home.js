@@ -19,12 +19,17 @@ const Home = () => {
     password: "",
   });
 
+  const createGuest = () => {
+    setUser({
+      email: "guest"
+    })
+  }
+
   const createUser = (e) => {
     Axios.put(api, signUp, { headers: { "Content-Type": "application/json" } })
       .then((response) => {
         const user = decode(response.data);
         setUser(user);
-        props.toggleLogIn(false);
       })
       .catch((err) => {
         console.log(err);
@@ -66,7 +71,7 @@ const Home = () => {
             <p>Enjoy!</p>
           </div>
           <div>
-            <button>Continue as Guest</button>
+            <button onClick={() => createGuest()}>Continue as Guest</button>
           </div>
           <div className="introAccButtons">
             <button onClick={() => setType("login")}>Log In</button>

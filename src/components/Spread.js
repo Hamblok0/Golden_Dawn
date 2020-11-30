@@ -131,22 +131,6 @@ const Spread = (props) => {
       {modals.longDesc && (
         <LongDescription card={modals.data} toggleLong={toggleLong} />
       )}
-      <div className="utilBar">
-        {!session.archived && 
-          <>
-            <FontAwesomeIcon
-              icon={faRandom}
-              onClick={() =>
-                updateSession({ ...session, deck: shuffle(session.deck) })
-              }
-            />
-            <FontAwesomeIcon
-              icon={faArchive}
-              onClick={() => saveReading(session.deck)}
-            />
-          </>        
-        }
-      </div>
       {setSpread()}
     </div>
   );

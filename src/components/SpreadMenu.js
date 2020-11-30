@@ -9,7 +9,7 @@ import cardSvg from "../img/card-edit.svg";
 const SpreadMenu = () => {
   const [user, updateUser] = useContext(UserContext);
   const history = useHistory();
-
+  
   if (!user) {
     history.push("/");
   }

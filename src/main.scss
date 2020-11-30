@@ -254,34 +254,11 @@ header {
 
 /* SPREAD */
 
-@mixin spreadTriads() {
-  display: flex;
-  flex-direction: column;
-  background-color: $mainBackground;
-  color: $charcoal;
-  align-items: center;
-  justify-content: center;
-
-  h3 {
-    display: inline-block;
-  }
-
-  .triad {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2.3em;
-    margin-top: 1em;
-    .cardWrapper {
-      width: 150px;
-      text-align: center;
-      img {
-        width: 150px;
-        height: 225px;
-        border-radius: 5px;
-      }
-    }
-  }
+.spreadWrapper {
+  height: 100%;
 }
+
+
 
 .utilBar {
   height: 30px;
@@ -299,56 +276,6 @@ header {
   }
 }
 
-.spread {
-  display: grid;
-  grid-template-columns: 0.5fr 3fr 0.5fr;
-  grid-template-rows: 2fr 2fr 2fr;
-  grid-template-areas:
-    ". row1 ."
-    ". row2 ."
-    ". row3 .";
-
-  .rowDivider {
-    width: 3em;
-  }
-
-  .row1 {
-    grid-area: row1;
-    display: flex;
-    justify-content: space-between;
-  }
-  .row2 {
-    grid-area: row2;
-    display: flex;
-    justify-content: center;
-  }
-  .row3 {
-    grid-area: row3;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .querent {
-    @include spreadTriads();
-    grid-area: querent;
-  }
-  .psychBasis {
-    @include spreadTriads();
-    grid-area: psych;
-  }
-  .currentPath {
-    @include spreadTriads();
-    grid-area: current;
-  }
-  .altPath {
-    @include spreadTriads();
-    grid-area: alt;
-  }
-  .karma {
-    @include spreadTriads();
-    grid-area: karma;
-  }
-}
 
 /* DICTIONARY MENU */
 
