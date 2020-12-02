@@ -5,8 +5,8 @@ const GoldenDawn = props => {
   return (
     <div className="spreadGD">
       <div className="row1">
-        <h3>Alternate Path</h3>
         <div className="triad">
+          <h3>Alternate Path</h3>
           <div className="cardWrapper">
             <img
               src={imgs[12]}
@@ -31,39 +31,36 @@ const GoldenDawn = props => {
             <h3>5</h3>
           </div>
         </div>
-        <div className="rowDivider"></div>
-        <div className="currentPath">
+        <div className="triad">
           <h3>Current Path</h3>
-          <div className="triad">
-            <div className="cardWrapper">
-              <img
-                src={imgs[3]}
-                onClick={() => props.toggleShort(props.deck[3], imgs[3])}
-              />
-              <h3>4</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[7]}
-                onClick={() => props.toggleShort(props.deck[7], imgs[7])}
-              />
-              <h3>8</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[11]}
-                onClick={() =>
-                  props.toggleShort(props.deck[11], imgs[11])
-                }
-              />
-              <h3>12</h3>
-            </div>
+          <div className="cardWrapper">
+            <img
+              src={imgs[3]}
+              onClick={() => props.toggleShort(props.deck[3], imgs[3])}
+            />
+            <h3>4</h3>
+          </div>
+          <div className="cardWrapper">
+            <img
+              src={imgs[7]}
+              onClick={() => props.toggleShort(props.deck[7], imgs[7])}
+            />
+            <h3>8</h3>
+          </div>
+          <div className="cardWrapper">
+            <img
+              src={imgs[11]}
+              onClick={() =>
+                props.toggleShort(props.deck[11], imgs[11])
+              }
+            />
+            <h3>12</h3>
           </div>
         </div>
       </div>
       <div className="row2">
-        <h3>Querent</h3>
         <div className="triad">
+          <h3>Querent</h3>
           <div className="cardWrapper">
             <img
               src={imgs[1]}
@@ -88,8 +85,8 @@ const GoldenDawn = props => {
         </div>
       </div>
       <div className="row3">
-        <h3>Psychological Basis</h3>
         <div className="triad">
+          <h3>Psychological Basis</h3>
           <div className="cardWrapper">
             <img
               src={imgs[13]}
@@ -114,9 +111,8 @@ const GoldenDawn = props => {
             <h3>6</h3>
           </div>
         </div>
-        <div className="rowDivider"></div>
-        <h3>Karma</h3>
         <div className="triad">
+          <h3>Karma</h3>
           <div className="cardWrapper">
             <img
               src={imgs[6]}
