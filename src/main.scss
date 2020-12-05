@@ -262,7 +262,7 @@ header {
   img {
     height: 204px;
     width: 145px;
-    border-radius: 9px;
+    border-radius: 6px;
     margin: 0 11px;
   }
 }
@@ -291,15 +291,11 @@ header {
 
 
 
-.utilBar {
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-content: center;
-  margin-top: 15px;
-  padding-right: 50px;
-
+.spreadUtil {
+  position: fixed;
+  bottom: 0;
+  background-color: $modal;
+  color: $charcoal;
   svg {
     color: $charcoal;
     font-size: 23px;

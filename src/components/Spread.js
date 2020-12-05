@@ -11,11 +11,7 @@ import LongDescription from "./Modals/LongDescription";
 // import ShuffleMain from "./Modals/ShuffleMain";
 // import ShuffleDrop from "./Modals/ShuffleDrop";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArchive,
-  faRandom
-} from "@fortawesome/free-solid-svg-icons";
+import SpreadUtil from "./SpreadUtil";
 
 const Spread = (props) => {
   const api = process.env.BACKEND + "/archives";
@@ -132,6 +128,9 @@ const Spread = (props) => {
         <LongDescription card={modals.data} toggleLong={toggleLong} />
       )}
       {setSpread()}
+      {!session.archived && (
+        <SpreadUtil deck={session.deck} saveReading={saveReading} shuffle={shuffle}/>
+      )}
     </div>
   );
 };
