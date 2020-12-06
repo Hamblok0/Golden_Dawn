@@ -41,8 +41,11 @@ const Home = () => {
     Axios.post(api, logIn, { headers: { "Content-Type": "application/json" } })
       .then((response) => {
         const user = decode(response.data);
-        setUser(user);
-        props.toggleLogIn(false);
+        if (user.archived) {
+          setUser({ ...user, archived: JSON.parse(user.archived)})
+        } else {
+          setUser(user);
+        }
       })
       .catch((err) => {
         console.log(JSON.stringify(err));

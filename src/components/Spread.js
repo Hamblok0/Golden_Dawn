@@ -8,8 +8,6 @@ import cardData from "../data/cardData.json";
 import defaultDeck from "../data/newDeck.json";
 import ShortDescription from "./Modals/ShortDescription";
 import LongDescription from "./Modals/LongDescription";
-// import ShuffleMain from "./Modals/ShuffleMain";
-// import ShuffleDrop from "./Modals/ShuffleDrop";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import SpreadUtil from "./SpreadUtil";
 
@@ -21,8 +19,7 @@ const Spread = (props) => {
   const [user, updateUser] = useContext(UserContext);
   const [modals, setModals] = useState({
     data: {},
-    shortDesc: false,
-    longDesc: false,
+    shortDesc: false
   });
 
   const getImgs = (deck, length) => {
@@ -60,37 +57,34 @@ const Spread = (props) => {
     return newDeck;
   };
 
-  const toggleShort = (card, url) => {
+  const toggleShort = (card) => {
     if (modals.data && modals.data.id === card) {
       setModals({ ...modals, shortDesc: false, data: {} });
     } else {
-      const data = { ...cardData[card], id: card, url: url };
+      const data = { ...cardData[card], id: card };
       setModals({ ...modals, shortDesc: true, data: data });
     }
   };
 
-  const toggleLong = (card) => {
-    if (card) {
-      setModals({ ...modals, shortDesc: false, longDesc: true });
-    } else {
-      setModals({ ...modals, longDesc: false, data: {} });
-    }
-  };
-
-  const saveReading = (deck) => {
+  const saveReading = () => {
     const data = {
       user: user.email,
-      deck,
+      deck: session.deck,
     };
 
     Axios.put(api, data, { headers: { "Content-Type": "application/json" } })
       .then((response) => {
-        updateUser({
-          ...user,
-          archived: JSON.stringify(
-            JSON.parse(user.archived).push(response.data.archive)
-          ),
-        });
+        if (user.archived) {
+          updateUser({
+            ...user,
+            archived: [ ...user.archived, response.data.archive ]
+          })
+        } else {
+          updateUser({
+            ...user,
+            archived: [ response.data.archive ]
+          });
+        }
       })
       .catch((err) => {
         console.log(JSON.stringify(err));
@@ -118,7 +112,7 @@ const Spread = (props) => {
       Cookie.set("tarot.io.deck", session.deck);
     }
   }, [session.deck]);
-
+  console.log(JSON.stringify(session));
   return (
     <div className="spreadWrapper">
       {modals.shortDesc && (
@@ -129,7 +123,7 @@ const Spread = (props) => {
       )}
       {setSpread()}
       {!session.archived && (
-        <SpreadUtil deck={session.deck} saveReading={saveReading} shuffle={shuffle}/>
+        <SpreadUtil session={session} saveReading={saveReading} shuffle={shuffle} updateSession={updateSession}/>
       )}
     </div>
   );

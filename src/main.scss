@@ -292,13 +292,27 @@ header {
 
 
 .spreadUtil {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   background-color: $modal;
   color: $charcoal;
+  width: 375px;
+  padding: 5px 0;
+  border-radius: 3px;
+  font-size: 11px;
+  box-shadow: 0px 1px 16px 0px $charcoal;
+  .utilButton {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 15px;
+  }
   svg {
     color: $charcoal;
-    font-size: 23px;
+    font-size: 32px;
     margin: 0 7px;
   }
 }

@@ -12,7 +12,7 @@ const GoldenDawn = props => {
               <img
                 src={imgs[12]}
                 onClick={() =>
-                  props.toggleShort(deck[12], imgs[12])
+                  props.toggleShort(props.deck[12], imgs[12])
                 }
               />
               <h3>13</h3>
