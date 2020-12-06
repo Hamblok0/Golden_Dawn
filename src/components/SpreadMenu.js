@@ -18,7 +18,7 @@ const SpreadMenu = () => {
     <div className="spreadMenuWrap">
       <div className="spreadSelect">
         <Link to="/reading/Golden_Dawn"><GoldenDawnPreview card={cardSvg}/></Link>
-        <RelationshipPreview card={cardSvg}/>
+        <RelationshipPreview card={cardSvg} />
         <PPFPreview card={cardSvg}/>
       </div>
     </div>

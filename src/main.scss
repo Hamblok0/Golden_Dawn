@@ -213,18 +213,18 @@ header {
 }
 
 .spreadPreviewGD {
- .row1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  div {
-    width: 30px;
+  .row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    div {
+      width: 30px;
+    }
   }
- }
 
- .row2 {
-   text-align: center;
- }
+  .row2 {
+    text-align: center;
+  }
 }
 
 .spreadPreviewRel {
@@ -278,18 +278,17 @@ header {
     margin-top: 15px;
   }
 
-  .row1, .row2, .row3 {
+  .row1,
+  .row2,
+  .row3 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     .spacer {
       width: 440px;
     }
-
   }
 }
-
-
 
 .spreadUtil {
   display: flex;
@@ -316,7 +315,6 @@ header {
     margin: 0 7px;
   }
 }
-
 
 /* DICTIONARY MENU */
 
@@ -553,106 +551,17 @@ header {
   }
 }
 
-/* SHUFFLE MODALS */
+/* NOTIFICATIONS */
 
-.shuffleMainWrapper {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(55, 55, 55, 0.6);
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-.shuffleMain {
-  background-color: $silk;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-self: center;
-  text-align: center;
+.notifyModal {
+  position: absolute;
+  top: 6em;
+  background: $modal;
+  font-size: 12px;
   color: $charcoal;
-  height: 200px;
-  width: 375px;
-  border: 1px solid $charcoal;
+  width: 300px;
+  padding: 30px 15px;
+  text-align: center;
   border-radius: 3px;
-
-  p {
-    margin: 10px 0;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
-
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
-.numberInput {
-  width: 80px;
-  height: 50px;
-  font-size: 35px;
-  background-color: $silk;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid $charcoal;
-  color: $charcoal;
-  align-self: center;
-  outline: none;
-  text-align: center;
-}
-
-.shuffleDrop {
-  background-color: $silk;
-  color: $charcoal;
-  position: relative;
-  top: 55px;
-  left: 64px;
-  height: 80px;
-  width: 90px;
-  text-align: center;
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  form {
-    display: inline-block;
-    margin-top: -20px;
-  }
-
-  input {
-    width: 60px;
-    height: 50px;
-    font-size: 27px;
-    background-color: $silk;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid $charcoal;
-    color: $charcoal;
-    outline: none;
-    text-align: center;
-  }
-}
-
-.triangle {
-  position: relative;
-  top: -23px;
-  left: 13px;
-  width: 0;
-  height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 30px solid $silk;
+  font-weight: bold;
 }
