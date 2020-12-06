@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import Cookie from "js-cookie";
 import Axios from "axios";
 import { UserContext } from "../Contexts/UserContext";
+import { NotifyContext } from "../Contexts/NotifyContext";
 import { usePrevious } from "../Hooks/usePrevious";
 import cardData from "../data/cardData.json";
 import defaultDeck from "../data/newDeck.json";
 import ShortDescription from "./Modals/ShortDescription";
-import LongDescription from "./Modals/LongDescription";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import SpreadUtil from "./SpreadUtil";
 
@@ -17,6 +17,7 @@ const Spread = (props) => {
   const fromPrevious = props.location.state;
   const { id } = useParams();
   const [user, updateUser] = useContext(UserContext);
+  const [notification, notify] = useContext(NotifyContext);
   const [modals, setModals] = useState({
     data: {},
     shortDesc: false
@@ -85,11 +86,14 @@ const Spread = (props) => {
             archived: [ response.data.archive ]
           });
         }
+        notify({msg: "Reading Saved!"})
       })
       .catch((err) => {
         console.log(JSON.stringify(err));
+        notify({msg: "Error saving reading, try again in a minute!"})
       });
   };
+
   const [session, updateSession] = useState(() => {
     if (fromPrevious) {
       return {
