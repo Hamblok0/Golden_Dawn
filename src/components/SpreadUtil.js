@@ -11,16 +11,24 @@ const SpreadUtil = (props) => {
           props.updateSession({
             ...props.session,
             deck: props.shuffle(props.session.deck),
+            saved: false
           })
         }
       >
         <ShuffleOutlinedIcon />
         Shuffle
       </div>
-      <div className="utilButton" onClick={() => props.saveReading()}>
-        <SaveAltOutlinedIcon />
-        Archive
-      </div>
+      {props.session.saved ? (
+        <div className="utilButtonInactive">
+          <SaveAltOutlinedIcon />
+          Archive
+        </div>
+      ) : (
+        <div className="utilButton" onClick={() => props.saveReading()}>
+          <SaveAltOutlinedIcon />
+          Archive
+        </div>
+      )}
     </div>
   );
 };

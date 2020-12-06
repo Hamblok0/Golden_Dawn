@@ -80,11 +80,13 @@ const Spread = (props) => {
             ...user,
             archived: [ ...user.archived, response.data.archive ]
           })
+          updateSession({ ...session, saved: true})
         } else {
           updateUser({
             ...user,
             archived: [ response.data.archive ]
           });
+          updateSession({ ...session, saved: true})
         }
         notify({msg: "Reading Saved!"})
       })
@@ -106,6 +108,7 @@ const Spread = (props) => {
       deck: shuffle(cookie ? JSON.parse(cookie) : defaultDeck),
       spread: id,
       archived: false,
+      saved: false
     };
   });
 

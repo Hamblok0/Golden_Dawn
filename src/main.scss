@@ -309,6 +309,15 @@ header {
     text-align: center;
     margin: 0 15px;
   }
+
+  .utilButtonInactive {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 15px;
+    opacity: 70%;
+  }
+
   svg {
     color: $charcoal;
     font-size: 32px;
