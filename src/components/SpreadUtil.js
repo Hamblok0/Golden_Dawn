@@ -1,13 +1,12 @@
 import React from "react";
-import saveSvg from "../img/save.svg";
-import shuffleSvg from "../img/shuffle.svg";
-
+import ShuffleOutlinedIcon from '@material-ui/icons/ShuffleOutlined';
+import SaveAltOutlinedIcon from '@material-ui/icons/SaveAltOutlined';
 
 const SpreadUtil = (props) => {
     return (
         <div className="spreadUtil">
-           <img src={shuffleSvg}/>
-           <img src={saveSvg}/>
+           <ShuffleOutlinedIcon />
+           <SaveAltOutlinedIcon />
         </div>
     )
 }
