@@ -112,14 +112,11 @@ const Spread = (props) => {
       Cookie.set("tarot.io.deck", session.deck);
     }
   }, [session.deck]);
-  console.log(JSON.stringify(session));
+
   return (
     <div className="spreadWrapper">
       {modals.shortDesc && (
-        <ShortDescription card={modals.data} toggleLong={toggleLong} />
-      )}
-      {modals.longDesc && (
-        <LongDescription card={modals.data} toggleLong={toggleLong} />
+        <ShortDescription card={modals.data} />
       )}
       {setSpread()}
       {!session.archived && (
