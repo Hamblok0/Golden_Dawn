@@ -10,49 +10,17 @@ const GoldenDawn = props => {
           <h3>Alternate Path</h3>
           <div className="triad">
             <Card card={{...props.data[props.deck[12]]}} img={imgs[12]}/>
-            <div className="cardWrapper">
-              <img
-                src={imgs[8]}
-                onClick={() => props.toggleShort(props.deck[8], imgs[8])}
-              />
-              <h3>9</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[4]}
-                onClick={() => props.toggleShort(props.deck[4], imgs[4])}
-              />
-              <h3>5</h3>
-            </div>
+            <Card card={{...props.data[props.deck[8]]}} img={imgs[8]}/>
+            <Card card={{...props.data[props.deck[4]]}} img={imgs[4]}/>
           </div>
         </div>
         <div className="spacer"></div>
         <div className="triadWrap">
           <h3>Current Path</h3>
           <div className="triad">    
-            <div className="cardWrapper">
-              <img
-                src={imgs[3]}
-                onClick={() => props.toggleShort(props.deck[3], imgs[3])}
-              />
-              <h3>4</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[7]}
-                onClick={() => props.toggleShort(props.deck[7], imgs[7])}
-              />
-              <h3>8</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[11]}
-                onClick={() =>
-                  props.toggleShort(props.deck[11], imgs[11])
-                }
-              />
-              <h3>12</h3>
-            </div>
+            <Card card={{...props.data[props.deck[3]]}} img={imgs[3]}/>
+            <Card card={{...props.data[props.deck[7]]}} img={imgs[7]}/>
+            <Card card={{...props.data[props.deck[11]]}} img={imgs[11]}/>
           </div>       
         </div>
       </div>
@@ -60,27 +28,9 @@ const GoldenDawn = props => {
         <div className="triadWrap">
           <h3>Querent</h3>
           <div className="triad">
-            <div className="cardWrapper">
-              <img
-                src={imgs[1]}
-                onClick={() => props.toggleShort(props.deck[1], imgs[1])}
-              />
-              <h3>2</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[0]}
-                onClick={() => props.toggleShort(props.deck[0], imgs[0])}
-              />
-              <h3>1</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[2]}
-                onClick={() => props.toggleShort(props.deck[2], imgs[2])}
-              />
-              <h3>3</h3>
-            </div>
+            <Card card={{...props.data[props.deck[1]]}} img={imgs[1]}/>
+            <Card card={{...props.data[props.deck[0]]}} img={imgs[0]}/>
+            <Card card={{...props.data[props.deck[2]]}} img={imgs[2]}/>
           </div>
         </div>
       </div>
@@ -88,60 +38,18 @@ const GoldenDawn = props => {
         <div className="triadWrap">
           <h3>Psychological Basis</h3>
           <div className="triad">
-            <div className="cardWrapper">
-              <img
-                src={imgs[13]}
-                onClick={() =>
-                  props.toggleShort(props.deck[13], imgs[13])
-                }
-              />
-              <h3>14</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[9]}
-                onClick={() => props.toggleShort(props.deck[9], imgs[9])}
-              />
-              <h3>10</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[5]}
-                onClick={() => props.toggleShort(props.deck[5], imgs[5])}
-              />
-              <h3>6</h3>
-            </div>
+            <Card card={{...props.data[props.deck[13]]}} img={imgs[13]}/>
+            <Card card={{...props.data[props.deck[9]]}} img={imgs[9]}/>
+            <Card card={{...props.data[props.deck[5]]}} img={imgs[5]}/>
           </div>
         </div>
         <div className="spacer"></div>
         <div className="triadWrap">
           <h3>Karma</h3>
           <div className="triad">
-            <div className="cardWrapper">
-              <img
-                src={imgs[6]}
-                onClick={() => props.toggleShort(props.deck[6], imgs[6])}
-              />
-              <h3>7</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[10]}
-                onClick={() =>
-                  props.toggleShort(props.deck[10], imgs[10])
-                }
-              />
-              <h3>11</h3>
-            </div>
-            <div className="cardWrapper">
-              <img
-                src={imgs[14]}
-                onClick={() =>
-                  props.toggleShort(props.deck[14], imgs[14])
-                }
-              />
-              <h3>15</h3>
-            </div>
+            <Card card={{...props.data[props.deck[6]]}} img={imgs[6]}/>
+            <Card card={{...props.data[props.deck[10]]}} img={imgs[10]}/>
+            <Card card={{...props.data[props.deck[14]]}} img={imgs[14]}/>
           </div>
         </div>   
       </div>
