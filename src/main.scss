@@ -180,6 +180,7 @@ header {
 .introAccButtons {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
   button {
     background-color: $light-forest;
     font-size: 12px;
