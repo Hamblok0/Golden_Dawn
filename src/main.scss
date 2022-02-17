@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
-$mainBackground: #cabfab;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Playfair+Display&display=swap');
+$mainBackground: #F1EDE8;
 $modal: #dfd8c8;
 $silk: #dcd0c0;
-$paper: #dbd8e3;
+$forest: #1A291B;
+$light-forest: #283E29;
 $charcoal: #41444b;
 $lightChar: #52575d;
 $opacity: 0.77;
@@ -11,7 +13,7 @@ $goldShadow: #b7af94;
 * {
   margin: 0;
   padding: 0;
-  font-family: "Fira Code", monospace;
+  font-family: "Playfair Display", monospace;
 }
 
 html {
@@ -38,17 +40,17 @@ header {
   justify-content: space-between;
   grid-template-columns: 1fr 3fr 1fr;
   height: 64px;
-  color: $paper;
+  color: $forest;
   position: fixed;
   width: 100%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   a {
-    color: $paper;
+    color: $forest;
     text-decoration: none;
   }
 
   a:visited {
-    color: $paper;
+    color: $forest;
   }
 
   .title {
@@ -95,18 +97,16 @@ header {
   display: flex;
   flex-direction: column;
   align-self: center;
-  background-color: $charcoal;
-  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
   width: 50vh;
   height: auto;
   padding: 30px;
   border-radius: 12px;
-  color: $paper;
+  color: $forest;
   text-align: center;
 
   button {
     background-color: $lightChar;
-    color: $paper;
+    color: $forest;
     border: none;
     border-radius: 3px;
     box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
@@ -135,7 +135,7 @@ header {
     height: 60px;
     background-color: $lightChar;
     border: none;
-    color: $paper;
+    color: $forest;
     border-radius: 3px;
   }
   input:focus {
@@ -156,13 +156,54 @@ header {
   margin: 15px 0 30px;
   padding: 0 20px 0 20px;
 
+
   h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   p {
-    font-size: 17px;
+    font-size: 14px;
     margin-top: 30px;
+    text-align: left;
+    font-family: "Josefin Sans", monospace
+  }
+
+  p:last-child {
+    text-align: center;
+  }
+}
+
+.introBodyText {
+  padding: 0 40px 0 40px;
+}
+
+.introAccButtons {
+  display: flex;
+  justify-content: space-between;
+  button {
+    background-color: $light-forest;
+    font-size: 12px;
+    text-align: center;
+    padding: 0px;
+    margin-top: 30px;
+    width: 130px;
+    height: 40px;
+    font-family: "Josefin Sans", monospace;
+    color: white;
+  }
+
+  button:hover {
+    background-color: $forest;
+    box-shadow: 5px 5px 3px rgb(0 0 0 / 25%);
+  }
+}
+
+.introGuestAccText {
+  padding: 20px;
+  a {
+    color: $forest;
+    font-size: 20px;
+    text-decoration: underline;
   }
 }
 
@@ -550,13 +591,13 @@ header {
 
   a {
     text-decoration: none;
-    color: $paper;
+    color: $forest;
     margin-bottom: 12px;
     font-size: 20px;
   }
 
   a:visited {
-    color: $paper;
+    color: $forest;
   }
 }
 

@@ -62,23 +62,27 @@ const Home = () => {
         <div className="loginBody">
           <div className="introText">
             <h1>Welcome to Tarot.io</h1>
-            <p>
-              This is an early version of this app, meaning that it’ll continue
-              to be updated with more features in the future.
-            </p>
-            <p>
-              Making an account is absolutely not necessary for readings but
-              recommended if you would like to archive and label your past
-              readings.
-            </p>
-            <p>Enjoy!</p>
+            <div className="introBodyText">
+              <p>
+                This is an early version of this app, meaning that it’ll continue
+                to be updated with more features in the future.
+              </p>
+              <p>
+                Making an account is absolutely not necessary for readings but
+                recommended if you would like to archive and label your past
+                readings.
+              </p>
+              <p>Enjoy!</p>
+            </div>
+          
+          
+            <div className="introAccButtons">
+              <button onClick={() => setType("login")}>LOG IN</button>
+              <button onClick={() => setType("register")}>SIGN UP</button>
+            </div>
           </div>
-          <div>
-            <button onClick={() => createGuest()}>Continue as Guest</button>
-          </div>
-          <div className="introAccButtons">
-            <button onClick={() => setType("login")}>Log In</button>
-            <button onClick={() => setType("register")}>Sign Up</button>
+          <div className="introGuestAccText">
+            <a href='javascript:;' onClick={() => createGuest()}>Continue to Tarot.io</a>
           </div>
         </div>
       )}
