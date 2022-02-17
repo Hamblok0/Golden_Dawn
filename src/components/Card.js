@@ -9,7 +9,7 @@ const Card = (props) => {
     <div className="cardWrapper">
       {info ? (
         <div className="cardInfo" onClick={() => toggleInfo(false)}>
-          <p>{name}</p>
+          <h3>{name}</h3>
           <p>{desc}</p>
           <button>More Info</button>
         </div>

@@ -301,8 +301,8 @@ header {
   justify-content: center;
   height: 100%;
   img {
-    height: 204px;
-    width: 145px;
+    height: 255px;
+    width: 170px;
     border-radius: 6px;
     margin: 0 11px;
   }
@@ -332,10 +332,18 @@ header {
 }
 
 .cardInfo {
-  height: 204px;
-  width: 145px;
+  height: 255px;
+  width: 170px;
   border-radius: 6px;
   margin: 0 11px;
+  font-family: "Josefin Sans", monospace;
+  background-color: #DCA068;
+  h3 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 9px;
+  }
 }
 
 .spreadUtil {
