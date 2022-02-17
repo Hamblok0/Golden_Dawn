@@ -155,8 +155,8 @@ header {
 .introText {
   margin: 15px 0 30px;
   padding: 0 20px 0 20px;
-
-
+  width: 500px;
+  height: 500px;
   h1 {
     font-size: 40px;
   }
@@ -167,15 +167,16 @@ header {
     text-align: left;
     font-family: "Josefin Sans", monospace
   }
-
-  p:last-child {
-    text-align: center;
-  }
+}
+.lastIntroBodyText {
+  text-align: center !important;
 }
 
-.introBodyText {
+.introBodyText{
   padding: 0 40px 0 40px;
 }
+
+
 
 .introAccButtons {
   display: flex;
@@ -185,9 +186,9 @@ header {
     font-size: 12px;
     text-align: center;
     padding: 0px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 130px;
-    height: 40px;
+    height: 35px;
     font-family: "Josefin Sans", monospace;
     color: white;
   }
@@ -199,7 +200,7 @@ header {
 }
 
 .introGuestAccText {
-  padding: 20px;
+  margin-top: 30px;
   a {
     color: $forest;
     font-size: 20px;
