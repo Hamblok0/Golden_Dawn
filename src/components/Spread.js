@@ -7,7 +7,6 @@ import { NotifyContext } from "../Contexts/NotifyContext";
 import { usePrevious } from "../Hooks/usePrevious";
 import cardData from "../data/cardData.json";
 import defaultDeck from "../data/newDeck.json";
-import ShortDescription from "./Modals/ShortDescription";
 import GoldenDawn from "./SpreadTemplates/GoldenDawn";
 import SpreadUtil from "./SpreadUtil";
 
@@ -18,10 +17,7 @@ const Spread = (props) => {
   const { id } = useParams();
   const [user, updateUser] = useContext(UserContext);
   const [notification, notify] = useContext(NotifyContext);
-  const [modals, setModals] = useState({
-    data: {},
-    shortDesc: false
-  });
+
 
   const getImgs = (deck, length) => {
     const endpoint = process.env.CARDS;
@@ -36,9 +32,9 @@ const Spread = (props) => {
       case "Golden_Dawn":
         return (
           <GoldenDawn
-            toggleShort={toggleShort}
             deck={session.deck}
             getImgs={getImgs}
+            data={cardData}
           />
         );
       default:
@@ -58,14 +54,6 @@ const Spread = (props) => {
     return newDeck;
   };
 
-  const toggleShort = (card) => {
-    if (modals.data && modals.data.id === card) {
-      setModals({ ...modals, shortDesc: false, data: {} });
-    } else {
-      const data = { ...cardData[card], id: card };
-      setModals({ ...modals, shortDesc: true, data: data });
-    }
-  };
 
   const saveReading = () => {
     const data = {
@@ -122,9 +110,6 @@ const Spread = (props) => {
 
   return (
     <div className="spreadWrapper">
-      {modals.shortDesc && (
-        <ShortDescription card={modals.data} />
-      )}
       {setSpread()}
       {!session.archived && (
         <SpreadUtil session={session} saveReading={saveReading} shuffle={shuffle} updateSession={updateSession}/>

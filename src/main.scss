@@ -290,6 +290,13 @@ header {
   }
 }
 
+.cardInfo {
+  height: 204px;
+  width: 145px;
+  border-radius: 6px;
+  margin: 0 11px;
+}
+
 .spreadUtil {
   display: flex;
   flex-direction: row;

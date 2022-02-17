@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card";
 
 const GoldenDawn = props => {
   const imgs = props.getImgs(props.deck, 15);
@@ -8,15 +9,7 @@ const GoldenDawn = props => {
         <div className="triadWrap">
           <h3>Alternate Path</h3>
           <div className="triad">
-            <div className="cardWrapper">
-              <img
-                src={imgs[12]}
-                onClick={() =>
-                  props.toggleShort(props.deck[12], imgs[12])
-                }
-              />
-              <h3>13</h3>
-            </div>
+            <Card card={{...props.data[props.deck[12]]}} img={imgs[12]}/>
             <div className="cardWrapper">
               <img
                 src={imgs[8]}
