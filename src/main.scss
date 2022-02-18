@@ -101,10 +101,7 @@ header {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 50vh;
   height: auto;
-  padding: 30px;
-  border-radius: 12px;
   color: $forest;
   text-align: center;
 
@@ -219,9 +216,8 @@ header {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 50vh;
   height: auto;
-  padding: 30px;
+  padding: 20px 70px 20px 70px;
   border-radius: 12px;
   background-color: $forest;
   color: white;
@@ -251,8 +247,8 @@ header {
   form {
     display: flex;
     flex-direction: column;
-    
     text-align: left;
+
     h2 {
       margin-bottom: 10px;
       font-size: 18px;
@@ -268,8 +264,7 @@ header {
     margin-bottom: 20px;
     background-color: transparent;
     padding: 5px 15px;
-    font-size: 25px;
-    height: 60px;
+    font-size: 20px;
     border: none;
     border-bottom: 1.5px solid $gold;
     color: $forest;
@@ -301,6 +296,16 @@ header {
     font-weight: 700;
   }
 
+}
+
+.loginRegisterLink {
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+.loginRegisterLink:hover {
+  color: $highlighted-gold;
+  transition: 0.3s ease-out;
 }
 
 

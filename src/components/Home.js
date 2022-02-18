@@ -92,7 +92,7 @@ const Home = () => {
               <h1>Log In</h1>
             </div>
             <form onSubmit={(e) => signIn(e)}>
-              <h2>Username:</h2>
+              <h2>Email:</h2>
               <input
                 type="text"
                 name="email"
@@ -111,7 +111,7 @@ const Home = () => {
                 }
               />
               <div className="formBottom">
-                <p onClick={() => setType("register")}>
+                <p className="loginRegister" onClick={() => setType("register")}>
                   Need to make an account?
                 </p>
                 <button type="submit">LOG IN</button>
@@ -126,6 +126,15 @@ const Home = () => {
             <h1>Register</h1>
           </div>
           <form onSubmit={(e) => createUser(e)}>
+          <h2>Name:</h2>
+            <input
+              type="text"
+              name="name"
+              value={signUp.name}
+              onChange={(e) =>
+                updateSignUp({ ...signUp, name: e.target.value })
+              }
+            />
             <h2>Email:</h2>
             <input
               type="text"
@@ -145,7 +154,6 @@ const Home = () => {
               }
             />
             <div className="formBottom">
-              <p onClick={() => setType("register")}>Don't have an account?</p>
               <button type="submit">SIGN UP</button>    
             </div>
           </form>
