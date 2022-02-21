@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <div className="homeWrapper">
       {type === "intro" && (
-        <div className="loginBody">
+        <div className="homeBody">
           <div className="introText">
             <h1>Welcome to Tarot.io</h1>
             <div className="introBodyText">
@@ -89,10 +89,10 @@ const Home = () => {
         <div className="loginBody" onClick={(e) => e.stopPropagation()}>
           <div className="loginContent">
             <div className="loginTitle">
-              <h1>Sign In</h1>
+              <h1>Log In</h1>
             </div>
             <form onSubmit={(e) => signIn(e)}>
-              <h2>Username:</h2>
+              <h2>Email:</h2>
               <input
                 type="text"
                 name="email"
@@ -111,10 +111,10 @@ const Home = () => {
                 }
               />
               <div className="formBottom">
-                <button type="submit">Submit</button>
-                <p onClick={() => setType("register")}>
-                  Don't have an account?
+                <p className="loginRegister" onClick={() => setType("register")}>
+                  Need to make an account?
                 </p>
+                <button type="submit">LOG IN</button>
               </div>
             </form>
           </div>
@@ -126,10 +126,10 @@ const Home = () => {
             <h1>Register</h1>
           </div>
           <form onSubmit={(e) => createUser(e)}>
-            <h2>Name:</h2>
+          <h2>Name:</h2>
             <input
               type="text"
-              name="username"
+              name="name"
               value={signUp.name}
               onChange={(e) =>
                 updateSignUp({ ...signUp, name: e.target.value })
@@ -154,8 +154,7 @@ const Home = () => {
               }
             />
             <div className="formBottom">
-              <button type="submit">Submit</button>
-              <p onClick={() => setType("register")}>Don't have an account?</p>
+              <button type="submit">SIGN UP</button>    
             </div>
           </form>
         </div>
