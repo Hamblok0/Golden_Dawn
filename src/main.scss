@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Playfair+Display&display=swap');
+
 $mainBackground: #F1EDE8;
 $modal: #dfd8c8;
 $silk: #dcd0c0;
+$white: #ffffff;
 $forest: #1A291B;
 $light-forest: #283E29;
+$gold: #C99125;
+$highlighted-gold: #ffbb00;
 $charcoal: #41444b;
 $lightChar: #52575d;
 $opacity: 0.77;
@@ -93,14 +98,11 @@ header {
   height: 100%;
 }
 
-.loginBody {
+.homeBody {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 50vh;
   height: auto;
-  padding: 30px;
-  border-radius: 12px;
   color: $forest;
   text-align: center;
 
@@ -124,7 +126,7 @@ header {
     text-align: left;
     h2 {
       margin-bottom: 10px;
-    }
+    } 
   }
 
   input {
@@ -155,8 +157,8 @@ header {
 .introText {
   margin: 15px 0 30px;
   padding: 0 20px 0 20px;
-
-
+  width: 500px;
+  height: 500px;
   h1 {
     font-size: 40px;
   }
@@ -167,13 +169,12 @@ header {
     text-align: left;
     font-family: "Josefin Sans", monospace
   }
-
-  p:last-child {
-    text-align: center;
-  }
+}
+.lastIntroBodyText {
+  text-align: center !important;
 }
 
-.introBodyText {
+.introBodyText{
   padding: 0 40px 0 40px;
 }
 
@@ -185,21 +186,23 @@ header {
     font-size: 12px;
     text-align: center;
     padding: 0px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 130px;
-    height: 40px;
+    height: 35px;
     font-family: "Josefin Sans", monospace;
     color: white;
+    transition: 0.3s ease-in;
   }
 
   button:hover {
     background-color: $forest;
+    transition: 0.3s ease-out;
     box-shadow: 5px 5px 3px rgb(0 0 0 / 25%);
   }
 }
 
 .introGuestAccText {
-  padding: 20px;
+  margin-top: 30px;
   a {
     color: $forest;
     font-size: 20px;
@@ -207,16 +210,113 @@ header {
   }
 }
 
+
+/* LOGIN */
+
+.loginBody {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: auto;
+  padding: 20px 70px 20px 70px;
+  border-radius: 12px;
+  background-color: $forest;
+  color: white;
+  text-align: center;
+
+  button {
+    font-family: "Josefin Sans", monospace;
+    background-color: $light-forest;
+    color:white;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    font-size: 17px;
+    margin: 20px 15px 0 15px;
+    width: 300px;
+    height: 40px;
+    border-radius: 3px;
+    transition: 0.3s ease-in;
+  }
+
+  button:hover {
+      transition: 0.3s ease-out;
+      box-shadow: 8px 8px 6px rgb(0 0 0 / 25%);
+    }
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    p {
+      font-family: "Josefin Sans", monospace;
+      font-size: 14px;
+    }
+  }
+
+  input {
+    margin-bottom: 20px;
+    background-color: transparent;
+    padding: 5px 15px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1.5px solid $gold;
+    color: $forest;
+  }
+  input:focus {
+    outline: none;
+    transition: 0.3s ease-out;
+    border-bottom: 1.5px solid $highlighted-gold;
+  }
+}
+
+.formBottom {
+  text-align: center;
+
+  p {
+    margin-top: 20px;
+    display: block;
+  }
+}
+
+
 .loginTitle {
+  font-family: "Playfair Display", monospace;
+  margin-bottom: 10px;
+  color: white;
   width: 100%;
   text-align: center;
+  h1 {
+    font-weight: 700;
+  }
+
 }
+
+.loginRegisterLink {
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+.loginRegisterLink:hover {
+  color: $highlighted-gold;
+  transition: 0.3s ease-out;
+}
+
 
 .loginChange {
   width: 100%;
   text-align: right;
   float: bottom;
 }
+
+
 
 /* SPREAD MENU */
 
