@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&family=Playfair+Display:wght@400;700&display=swap');
 
 $mainBackground: #F1EDE8;
 $modal: #dfd8c8;
@@ -434,15 +432,18 @@ header {
 .cardInfo {
   height: 255px;
   width: 170px;
-  border-radius: 6px;
+  border-radius: 3px;
   margin: 0 11px;
-  font-family: "Josefin Sans", monospace;
   background-color: #DCA068;
   h3 {
     font-size: 14px;
+    font-family: "Josefin Sans", monospace;
+    font-weight: 300;
   }
   p {
-    font-size: 9px;
+    font-size: 14px;
+    font-family: "Josefin Sans", monospace;
+    font-weight: 300;
   }
 }
 
